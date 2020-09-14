@@ -1,0 +1,142 @@
+.div-principal{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.div-left{
+    position: sticky;
+    width: 50%;
+    height: 100vh;
+    left: 0;
+    bottom: 0;
+    background-color: #3AB0A2;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.button-home{
+    background: #3AB0A2;
+    border: solid 2px #fff;
+    border-radius: 5px;
+    left: 0;
+    position: absolute;
+    margin: 20px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.button-home:hover{
+    background: #20635b;
+}
+
+.div-right{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    right: 0;
+}
+
+.div-inf{
+    padding-top: 30%;
+}
+
+.div-inf strong{
+    font-size: 40px;
+}
+
+.div-inf p {
+    font-size: 20px;
+}
+
+.div-button button{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(58, 176, 162, 0.74);
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    box-sizing: border-box;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.div-button button:hover{
+    background-color: rgba(29, 94, 86, 0.39);
+}
+
+.link-button{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.div-title{
+    width: auto;
+    padding: 0;
+    margin-top: 160px;
+    color: #3AB0A2;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.div-icons{
+    display: inline-flex;
+}
+
+.div-icons img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.div-right p {
+    color: #A9A9A9;
+}
+
+.icon-name{
+
+    color: #D2D2D2;
+    padding-right: 10px;
+}
+
+
+input{
+    width: 400px;
+    padding-top: 10px;
+    margin-top: 25px;
+    border: 0 none;
+    border-bottom: 2px solid #D2D2D2 ;
+}
+
+.div-button-right{
+    margin-top: 60px;
+}
+
+.div-button-right button{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #3AB0A2;
+    width: 230px;
+    height: 35px;
+    border: none 0 ;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.div-button-right button:hover{
+    background-color: rgba(29, 94, 87, 0.993);
+}
+
+.icon-input{
+    margin-top: 30px;
+    padding-right: 10px;
+    margin-bottom: -6px;
+}
