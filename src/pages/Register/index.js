@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './register.css';
 import { Link } from 'react-router-dom'
 import imgFace from '../../img/facebook.svg'
@@ -10,10 +10,37 @@ import LockIcon from '@material-ui/icons/Lock';
 import HomeIcon from '@material-ui/icons/Home';
 
 const Register = (props) => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [listUsers, setListUsers] = useState([
+        {
+            id: '1',
+            name: 'Ray Carlos',
+            email: 'raycarlos17@gmail.com',
+            password: '123456'
+        }   
+    ])
+
+    // useEffect(async () => {
+    //     const response = await fetch('http://localhost:3001/users')
+    //     const data = await response.json();
+
+    //     setListUsers(data)
+    //     console.log(data)
+    // }, []);
+
+    // registerUser = () => {
+
+    // }
+
+
     return (
         <div className='div-principal'>
             <div className='div-left'>
                 <div>
+                    {console.log(listUsers)}
                     <button className='button-home'>
                         <Link to='/'>
                             <HomeIcon style={{ color: '#fff' }} />
