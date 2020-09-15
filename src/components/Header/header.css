@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
 ::-webkit-input-placeholder {
     color:#ccc;
  }
@@ -23,14 +25,15 @@
     top: 0;
     color: #ffffff;
     display: flex;
-
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }
 
 .div-title-header{
     font-size: 30px;
     text-align: center;
     width: 15%;
-    padding-top: 25px;
     padding-left: 20px;
 }
 
@@ -39,6 +42,10 @@
     color: #ffffff;
     font-weight: bold;
     transition: all ease 0.2s;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 40px;
+  
+    position: relative;
 }
 
 .link-title:hover{
@@ -53,18 +60,18 @@
 .div-search input {
     padding-right: 20px;
     text-align: right;
+    margin-bottom: 25px;
     padding-bottom: 10px;
     width: 100%;
     height: 20px;
     border-radius: 30px;
-    background: #1f6159;
+    background: #2c867c;
     color: #ffffff;
     border: #1f6159;
     
 }
 
 .div-login{
-    padding-top: 35px;
     padding-left: 20%;
     font-size: 20px;
     text-align: center;
@@ -78,6 +85,8 @@
     color: #ffffff;
     font-weight: bold;
     transition: all ease 0.2s;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 25px;
 }
 
 .link-login:hover{
@@ -86,11 +95,11 @@
 
 .icon-search{
     position: absolute;
-    top: 30px;
-   margin-left: 10px;
-   font-size: large;
-   background: none;
-   border: none;
-   color: #ffffff;
-   cursor: pointer;
+    top: 35px;
+    margin-left: 10px;
+    font-size: large;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
 }

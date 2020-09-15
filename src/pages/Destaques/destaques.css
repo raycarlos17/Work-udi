@@ -1,0 +1,58 @@
+.div-principal-destaques{
+    text-align: center;
+    background:  #3AB0A2;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.div-principal-destaques h2{
+    padding-top: 20px;
+    color: #ffffff;
+}
+
+.div-destaques{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    background: #3AB0A2;
+    top: 0;
+    margin: 20px;
+    border-radius: 10px;
+    margin-top: 0;
+
+}
+
+.div-contate{
+    color: rgb(255, 255, 255);
+    background-color: #70d1c4;
+    border-radius: 10px;
+    height: 200px;
+    width: 15%;
+    margin: 20px;
+}
+
+.div-contate h3{
+    margin: 0;
+    margin-top: -10px;
+}
+
+.div-contate button{
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 50%;
+    height: 25px;
+    background-color: #ffffff;
+    transition: all ease 0.2s;
+    color: #3AB0A2;
+}
+
+.div-contate button:hover{
+    background-color: #ccc  ;
+}
+
+
+
+

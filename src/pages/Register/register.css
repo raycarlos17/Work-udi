@@ -5,6 +5,17 @@
     display: flex;
 }
 
+.div-left{
+    position: sticky;
+    width: 50%;
+    height: 100vh;
+    left: 0;
+    bottom: 0;
+    background-color: #3AB0A2;
+    color: #ffffff;
+    font-size: 30px;
+}
+
 .button-home{
     background: #3AB0A2;
     border: solid 2px #fff;
@@ -18,17 +29,7 @@
 
 .button-home:hover{
     background: #20635b;
-}
-
-.div-left{
-    position: sticky;
-    width: 50%;
-    height: 100vh;
-    left: 0;
-    bottom: 0;
-    background-color: #3AB0A2;
-    color: #ffffff;
-    font-size: 30px;
+    color: #cccccc;
 }
 
 .div-right{
@@ -57,7 +58,7 @@
     font-weight: bold;
     color: #ffffff;
     background: rgba(58, 176, 162, 0.74);
-    border: 1px solid rgba(255, 255, 255, 0.75);
+    border: 3px solid rgba(255, 255, 255, 0.75);
     box-sizing: border-box;
     border-radius: 50px;
     cursor: pointer;

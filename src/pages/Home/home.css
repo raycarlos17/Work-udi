@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
 .div-imagem{
     background-image: url('../../img/img-home.svg');
     width: 100%;
@@ -17,7 +19,7 @@
 
 .logo{
     position: relative;
-    background: #6DC5BA;
+    background: #3AB0A2;
     width: 350px;
     height: 200px;
     margin: 65px;
@@ -25,6 +27,13 @@
     color: #ffffff;
     text-align: center;
     align-items: center;
+}
+
+.logo h1{
+    position: relative;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 120px;
+    bottom: 70px;
 }
 
 
@@ -41,7 +50,7 @@
 }
 
 .button-register{
-    background-color:#6DC5BA ;
+    background-color:#3AB0A2 ;
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
@@ -49,12 +58,12 @@
     width: 250px;
     border-radius: 20px;
     cursor: pointer;
-    border: #6DC5BA;
+    border: #3AB0A2;
     transition: all ease 0.2s;
 }
 
 .button-register:hover{
-    background-color:#46867f
+    background-color:#276e66
 }
 
 .link-register{

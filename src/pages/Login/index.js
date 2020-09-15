@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './login.css';
 import { Link } from 'react-router-dom'
 import imgFace from '../../img/facebook.svg'
 import imgGoogle from '../../img/google.svg'

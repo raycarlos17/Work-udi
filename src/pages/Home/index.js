@@ -1,7 +1,9 @@
 import React from 'react';
-import './styles.css'
+import './home.css'
 import {Link} from 'react-router-dom';
 import Header from '../../components/Header'
+import Destaques from '../Destaques';
+import Footer from '../../components/Footer';
 
 const Home = (props) => {
 
@@ -10,7 +12,7 @@ const Home = (props) => {
         <Header/>
         <div className='div-imagem'>
             <div className='div-info'>
-                <div className='logo'>LOGO</div>
+                <div className='logo'><h1>WU</h1></div>
                 <div className='info-site'>
                     <p>PRINCIPAIS INFORMAÇÕES DO SITE VÃO ESTAR POSTADAS DO LADO DA LOGO</p>
                     <div >
@@ -19,6 +21,8 @@ const Home = (props) => {
                 </div>
             </div>
         </div>
+        <Destaques/>
+        <Footer/>
         </React.Fragment>
     )
 }
