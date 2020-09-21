@@ -11,36 +11,41 @@ import HomeIcon from '@material-ui/icons/Home';
 
 const Register = (props) => {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [listUsers, setListUsers] = useState([
-        {
-            id: '1',
-            name: 'Ray Carlos',
-            email: 'raycarlos17@gmail.com',
-            password: '123456'
-        }   
-    ])
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [listUsers, setListUsers] = useState([])
 
-    // useEffect(async () => {
-    //     const response = await fetch('http://localhost:3001/users')
-    //     const data = await response.json();
+    useEffect(() => {
+        try {
+            fetch('http://localhost:3001/users')
+                .then(response => response.json())
+                .then(
+                    (result) => {
+                        setListUsers(result);
+                    })
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }, [])
 
-    //     setListUsers(data)
-    //     console.log(data)
-    // }, []);
+    function registerUser(name, email, password) {
+        let id = listUsers.length + 1
 
-    // registerUser = () => {
-
-    // }
-
+        const list = {
+            id: id,
+            name: name,
+            email: email,
+            password: password,
+        }
+        setListUsers(list)
+    }
 
     return (
         <div className='div-principal'>
             <div className='div-left'>
                 <div>
-                    {console.log(listUsers)}
                     <button className='button-home'>
                         <Link to='/'>
                             <HomeIcon style={{ color: '#fff' }} />
@@ -70,20 +75,21 @@ const Register = (props) => {
                 <br />
                 <form>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='text' placeholder='Name' />
+                    <input type='text' placeholder='Name' onChange={e => setName(e.target.value)} />
                     <br />
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='text' placeholder='Email' />
+                    <input type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} />
                     <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='password' placeholder='Password' />
+                    <input type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
                     <br />
-                </form>
-                <div className='div-button-right'>
-                    <button>
-                        SIGN UP
+                    <div className='div-button-right'>
+                        <button onClick={() => registerUser(name, email, password)}>
+                            SIGN UP
                     </button>
-                </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     )
