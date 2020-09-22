@@ -15,7 +15,20 @@ const Register = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [listUsers, setListUsers] = useState([])
-
+    // const [listUsersHard, setListUsersHard] = useState([
+    //     {
+    //         id: 1,
+    //         name: "Fulado de tal",
+    //         email: "fulano1@gmail.com",
+    //         password: "123456"
+    //     }, {
+    //         id: 2,
+    //         name: "Fulado de tal",
+    //         email: "fulano1@gmail.com",
+    //         password: "123456"
+    //     }
+    // ])
+    //----------------------------------------------------------------------------
     useEffect(() => {
         try {
             fetch('http://localhost:3001/users')
@@ -29,20 +42,67 @@ const Register = (props) => {
             console.error(error)
         }
     }, [])
+    //-------------------------------------------------------------------------------------
+    async function registerUserBack() {
+        let list = await listUsers
+        let id = await list.length + 1
+        try {
+            let retorno = await fetch('http://localhost:3001/users', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: JSON.stringify({
+                    "id": id,
+                    "name": name,
+                    "email": email,
+                    "password": password
+                })
+            })
 
-    function registerUser(name, email, password) {
-        let id = listUsers.length + 1
+            let json = await retorno.json()
+            alert('Registrado com sucesso')
+            return json
 
-        const list = {
-            id: id,
-            name: name,
-            email: email,
-            password: password,
+        } catch (error) {
+            alert('Erro ao fazer o registro')
+            console.log(error)
         }
-        setListUsers(list)
     }
+    //---------------------------------------------------------------------------------
+    // function registerUserHard(name, email, password) {
 
+    //     let list = listUsersHard
+
+    //     let id = list.length + 1
+    //     list.push({
+    //         id: id,
+    //         name: name,
+    //         email: email,
+    //         password: password,
+    //     })
+    //     setListUsersHard(list)
+    // }
+    //----------------------------------------------------------------------------------------
+    function handleClick(e) {
+        e.preventDefault()
+        // registerUserHard(name, email, password)
+        confirmRegister(email)
+    }
+    //-----------------------------------------------------------------------------------------
+    function confirmRegister(email) {
+        listUsers.map(users => {
+            if (email === users.email) {
+                return alert('Email ja registrado em sistema')
+            } else {
+                return registerUserBack().then(resultado => (JSON.stringify(resultado)))
+            }
+        })
+    }
     return (
+
         <div className='div-principal'>
             <div className='div-left'>
                 <div>
@@ -75,18 +135,18 @@ const Register = (props) => {
                 <br />
                 <form>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='text' placeholder='Name' onChange={e => setName(e.target.value)} />
+                    <input id='inputName' type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} />
+                    <input id='inputEmail' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required />
                     <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
+                    <input id='inputPassword' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
                     <div className='div-button-right'>
-                        <button onClick={() => registerUser(name, email, password)}>
+                        <button type="submit" onClick={handleClick}>
                             SIGN UP
-                    </button>
+                        </button>
                     </div>
                 </form>
 

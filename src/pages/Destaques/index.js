@@ -4,6 +4,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {Link} from 'react-router-dom';
 
 const Destaques = () => {
 
@@ -13,7 +14,7 @@ const Destaques = () => {
         infinite: false,
         speed: 600,
         slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToScroll: 4,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
     })
@@ -64,7 +65,7 @@ const Destaques = () => {
                         </div>
                         <h3>{workers.occupation}</h3>
                         <h4>{workers.name}</h4>
-                        <button><strong>Contate</strong></button>
+                        <button><strong><Link className='link-workers' to={`/workers/${workers.id}`}>Contate</Link></strong></button>
                     </div>
                 </div>
             )
