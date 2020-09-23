@@ -5,10 +5,13 @@
     border-radius: 20px;
     height: auto;
     box-shadow: none;
+    margin-bottom: 25px;
 }
 
 .div-principal-destaques h2{
-    padding-top: 20px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
     color: #ffffff;
 }
 

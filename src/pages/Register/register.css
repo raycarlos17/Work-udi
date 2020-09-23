@@ -141,3 +141,16 @@ input{
     padding-right: 10px;
     margin-bottom: -6px;
 }
+
+.input-radio{
+    width: 10px;
+}
+
+form label{
+    display: inline;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+    color: #A9A9A9;;
+}

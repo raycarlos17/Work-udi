@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './register.css';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import imgFace from '../../img/facebook.svg'
 import imgGoogle from '../../img/google.svg'
 import imgLinkedin from '../../img/linkedin.svg'
@@ -14,6 +14,7 @@ const Register = (props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [perfil, setPerfil] = useState('')
     const [listUsers, setListUsers] = useState([])
     // const [listUsersHard, setListUsersHard] = useState([
     //     {
@@ -58,17 +59,20 @@ const Register = (props) => {
                     "id": id,
                     "name": name,
                     "email": email,
-                    "password": password
+                    "password": password,
+                    "perfil": perfil
                 })
             })
 
             let json = await retorno.json()
             alert('Registrado com sucesso')
             clearForms()
+            routeChange()
             return json
 
         } catch (error) {
             alert('Erro ao fazer o registro')
+            clearForms()
             console.log(error)
         }
     }
@@ -94,19 +98,41 @@ const Register = (props) => {
     }
     //-----------------------------------------------------------------------------------------
     function confirmRegister(email) {
+
+        let emailConfirmerd = true
+
         listUsers.map(users => {
-            if (email === users.email) {
-                return alert('Email ja registrado em sistema')
-            } else {
-                return registerUserBack().then(resultado => (JSON.stringify(resultado)))
-            }
+            
+                if (email === users.email) {
+                    alert('Email ja registrado em sistema')
+                    clearForms()
+                    return emailConfirmerd = false
+                }
+                return emailConfirmerd;
         })
+        if (email === '' || name === '' || password === '' || perfil === '') {
+            return alert('Preencher todos os campos para fazer o cadastro')
+        }
+
+        if (emailConfirmerd === true) {
+            return registerUserBack().then(resultado => (JSON.stringify(resultado)))
+        }
+
     }
     //---------------------------------------------------------------------------------------------
     function clearForms() {
         setName('')
         setEmail('')
         setPassword('')
+        setPerfil('')
+        
+    }
+    //-----------------------------------------------------------------------------------------
+    const history = useHistory()
+
+    const routeChange = () => {
+        let path = '/login'
+        history.push(path)
     }
     //-----------------------------------------------------------------------------------------
     return (
@@ -143,7 +169,7 @@ const Register = (props) => {
                 <br />
                 <form>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input value={name}  type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
+                    <input value={name} type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required />
@@ -151,6 +177,14 @@ const Register = (props) => {
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
+                    <label>
+                        <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('cliente')} />
+                        Cliente
+                        </label>
+                    <label>
+                        <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('profissional')} />
+                        Profissional
+                        </label>
                     <div className='div-button-right'>
                         <button type="submit" onClick={handleClick}>
                             SIGN UP

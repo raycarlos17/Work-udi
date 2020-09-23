@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './login.css';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import imgFace from '../../img/facebook.svg'
 import imgGoogle from '../../img/google.svg'
 import imgLinkedin from '../../img/linkedin.svg'
@@ -14,7 +14,7 @@ const Login = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [listUsers, setListUsers] = useState([])
-//-------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------
     useEffect(() => {
         try {
             fetch('http://localhost:3001/users')
@@ -28,17 +28,40 @@ const Login = (props) => {
             console.error(error)
         }
     }, [])
-//------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
     function confirmLogin() {
-         for(let i = 0; email === listUsers[i].email; i++){
-             if(password === listUsers[i].password){
-                 alert('Logado com sucesso')
-             } else {
-                 alert('Credenciais invalidas')
-             }
-         }
+        let user
+        listUsers.map(list => {
+
+            if (email === list.email) {
+                user = list
+            }
+            return true
+        })
+        if (password === '' && email === '') {
+            alert('Preencher email e senha para logar')
+        } 
+        else if (user === undefined) {
+            alert('Email não encontrado')
+            setEmail('')
+            setPassword('')
+        } else if (password === user.password) {
+            alert('Logado com sucesso')
+            routeChange(user.perfil)
+        } else if (password !== user.password) {
+            alert('Password invalido')
+            setPassword('')
         }
-//---------------------------------------------------------------------------------------
+
+    }
+    //-------------------------------------------------------------------------------------
+    const history = useHistory()
+
+    const routeChange = (perfil) => {
+        let path = '/'.concat(perfil);
+        history.push(path)
+    }
+    //---------------------------------------------------------------------------------------
     return (
         <div className='div-principal'>
             <div className='div-left'>

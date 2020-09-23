@@ -2,14 +2,23 @@
   "users": [
     {
       "id": 1,
-      "name": "Ray",
-      "email": "raycarlos@gmail.com",
+      "name": "profissiona1",
+      "email": "profissional1@gmail.com",
+      "perfil": "profissional",
       "password": "123456"
     },
     {
       "id": 2,
-      "name": "Ray",
-      "email": "raycarlos123@gmail.com",
+      "name": "cliente1",
+      "email": "cliente1@gmail.com",
+      "perfil": "cliente",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Ray Carlos",
+      "email": "raycarlos@gmail.com",
+      "perfil": "cliente",
       "password": "123456"
     }
   ],
