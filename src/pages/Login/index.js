@@ -30,14 +30,14 @@ const Login = (props) => {
     }, [])
 //------------------------------------------------------------------------------------
     function confirmLogin() {
-        listUsers.map(users => {
-            if(email === users.email && password === users.password){
-                alert('Logado com sucesso')
-            } else if(email !== users.email || password !== users.password ){
-                alert('Credenciais invalidas')
-            }
-        })
-    }
+         for(let i = 0; email === listUsers[i].email; i++){
+             if(password === listUsers[i].password){
+                 alert('Logado com sucesso')
+             } else {
+                 alert('Credenciais invalidas')
+             }
+         }
+        }
 //---------------------------------------------------------------------------------------
     return (
         <div className='div-principal'>
