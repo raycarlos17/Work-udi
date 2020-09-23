@@ -64,6 +64,7 @@ const Register = (props) => {
 
             let json = await retorno.json()
             alert('Registrado com sucesso')
+            clearForms()
             return json
 
         } catch (error) {
@@ -101,6 +102,13 @@ const Register = (props) => {
             }
         })
     }
+    //---------------------------------------------------------------------------------------------
+    function clearForms() {
+        setName('')
+        setEmail('')
+        setPassword('')
+    }
+    //-----------------------------------------------------------------------------------------
     return (
 
         <div className='div-principal'>
@@ -135,13 +143,13 @@ const Register = (props) => {
                 <br />
                 <form>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input id='inputName' type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
+                    <input value={name}  type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input id='inputEmail' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required />
+                    <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required />
                     <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input id='inputPassword' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
+                    <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
                     <div className='div-button-right'>
                         <button type="submit" onClick={handleClick}>

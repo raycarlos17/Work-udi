@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.css';
 import { Link } from 'react-router-dom'
 import imgFace from '../../img/facebook.svg'
@@ -10,6 +10,35 @@ import LockIcon from '@material-ui/icons/Lock';
 
 
 const Login = (props) => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [listUsers, setListUsers] = useState([])
+//-------------------------------------------------------------------------------
+    useEffect(() => {
+        try {
+            fetch('http://localhost:3001/users')
+                .then(response => response.json())
+                .then(
+                    (result) => {
+                        setListUsers(result);
+                    })
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }, [])
+//------------------------------------------------------------------------------------
+    function confirmLogin() {
+        listUsers.map(users => {
+            if(email === users.email && password === users.password){
+                alert('Logado com sucesso')
+            } else if(email !== users.email || password !== users.password ){
+                alert('Credenciais invalidas')
+            }
+        })
+    }
+//---------------------------------------------------------------------------------------
     return (
         <div className='div-principal'>
             <div className='div-left'>
@@ -37,10 +66,10 @@ const Login = (props) => {
                 <br />
                 <form>
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='text' placeholder='Email' />
+                    <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} />
                     <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input type='password' placeholder='Password' />
+                    <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
                     <br />
                 </form>
                 <p>or use your email for login</p>
@@ -50,7 +79,7 @@ const Login = (props) => {
                     <div><img src={imgLinkedin} alt='Linkedin'></img></div>
                 </div>
                 <div className='div-button-right'>
-                    <button>
+                    <button type='submit' onClick={confirmLogin}>
                         SIGN IN
                     </button>
                 </div>
