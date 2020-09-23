@@ -1,5 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './workers.css';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const Workers = (props) => {
 
@@ -21,13 +23,24 @@ const Workers = (props) => {
 
     return (
         <div>
-            {console.log(props)}
-            <h1>WORKERS</h1>
-            <h2>Name: {listWorkers.name}</h2>
-            <h2>Email: {listWorkers.email}</h2>
-            <h2>Ocupation: {listWorkers.occupation}</h2>
-            <h2>Contact: {listWorkers.contact}</h2>
-
+            <Header />
+            <div className='div-workers'>
+                <h4>Informações</h4>
+                <p><strong>Name: </strong>{listWorkers.name}</p>
+                <br />
+                <hr/>
+                <p><strong>Email: </strong>{listWorkers.email}</p>
+                <br />
+                <hr/>
+                <p><strong>Ocupation: </strong>{listWorkers.occupation}</p>
+                <br />
+                <hr/>
+                <p><strong>Contact: </strong>{listWorkers.contact}</p>
+                <br />
+                <hr/>
+                <p><strong>Description: </strong>{listWorkers.description}</p>
+            </div>
+            <Footer />
         </div>
     )
 }

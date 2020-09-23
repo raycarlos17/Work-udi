@@ -8,7 +8,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
-
 const Login = (props) => {
 
     const [email, setEmail] = useState('')
@@ -40,7 +39,7 @@ const Login = (props) => {
         })
         if (password === '' && email === '') {
             alert('Preencher email e senha para logar')
-        } 
+        }
         else if (user === undefined) {
             alert('Email não encontrado')
             setEmail('')
@@ -75,16 +74,16 @@ const Login = (props) => {
                 <div className='div-inf'>
                     <div><strong>Welcome!!!</strong></div>
                     <br />
-                    <p>Para se manter conectado conosco por</p>
-                    <p>favor faça o login com suas</p>
-                    <p>informações pessoais</p>
+                    <p>If you are not a user</p>
+                    <p>Make your registration now</p>
+                    <p>Just click the link below</p>
                     <br />
-                    <div className='div-button'><button><Link className='link-button' to='/register'>SIGN UP</Link></button></div>
+                    <div className='div-button'><button><Link className='link-button' to='/register'>REGISTER</Link></button></div>
                 </div>
             </div>
             <div className='div-right'>
                 <div className='div-title'>Login</div>
-                <p>Preencha os dados e faça o login...</p>
+                <p>Fill in the fields and login</p>
                 <br />
                 <br />
                 <form>
@@ -95,7 +94,7 @@ const Login = (props) => {
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
                     <br />
                 </form>
-                <p>or use your email for login</p>
+                <p>Fill in with your email and password to login</p>
                 <div className='div-icons'>
                     <div><img src={imgFace} alt='Facebook'></img></div>
                     <div><img src={imgGoogle} alt='Google'></img></div>
@@ -103,7 +102,7 @@ const Login = (props) => {
                 </div>
                 <div className='div-button-right'>
                     <button type='submit' onClick={confirmLogin}>
-                        SIGN IN
+                        LOG IN
                     </button>
                 </div>
             </div>

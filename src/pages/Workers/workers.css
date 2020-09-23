@@ -1,0 +1,26 @@
+
+.div-workers{
+    margin: 40px;
+    border: 5px solid #3AB0A2;
+    background: #3AB0A2 ;
+    border-radius: 20px;
+    width: 40%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    padding: 20px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    font-size: 20px;
+
+}
+
+.div-workers h4{
+    background-color: #fff;
+    color: #3AB0A2;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 0;
+    padding: 5px;
+}

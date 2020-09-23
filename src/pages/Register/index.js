@@ -8,12 +8,14 @@ import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import HomeIcon from '@material-ui/icons/Home';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 const Register = (props) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [perfil, setPerfil] = useState('')
     const [listUsers, setListUsers] = useState([])
     // const [listUsersHard, setListUsersHard] = useState([
@@ -102,20 +104,26 @@ const Register = (props) => {
         let emailConfirmerd = true
 
         listUsers.map(users => {
-            
-                if (email === users.email) {
-                    alert('Email ja registrado em sistema')
-                    clearForms()
-                    return emailConfirmerd = false
-                }
-                return emailConfirmerd;
+
+            if (email === users.email) {
+                alert('Email ja registrado em sistema')
+                clearForms()
+                return emailConfirmerd = false
+            }
+            return emailConfirmerd;
         })
         if (email === '' || name === '' || password === '' || perfil === '') {
             return alert('Preencher todos os campos para fazer o cadastro')
         }
 
         if (emailConfirmerd === true) {
-            return registerUserBack().then(resultado => (JSON.stringify(resultado)))
+            if (password === confirmPassword) {
+                return registerUserBack().then(resultado => (JSON.stringify(resultado)))
+            } else {
+                alert('Password invalido, digite novamente')
+                setPassword('')
+                setConfirmPassword('')
+            }
         }
 
     }
@@ -125,7 +133,7 @@ const Register = (props) => {
         setEmail('')
         setPassword('')
         setPerfil('')
-        
+
     }
     //-----------------------------------------------------------------------------------------
     const history = useHistory()
@@ -136,7 +144,6 @@ const Register = (props) => {
     }
     //-----------------------------------------------------------------------------------------
     return (
-
         <div className='div-principal'>
             <div className='div-left'>
                 <div>
@@ -147,13 +154,13 @@ const Register = (props) => {
                     </button>
                 </div>
                 <div className='div-inf'>
-                    <div><strong>Welcome Back!</strong></div>
+                    <div><strong>Welcome!!!</strong></div>
                     <br />
-                    <p>Para se manter conectado conosco por</p>
-                    <p>favor faça o login com suas</p>
-                    <p>informações pessoais</p>
+                    <p>If you are already a user</p>
+                    <p>Click on the link below</p>
+                    <p>Login with your details</p>
                     <br />
-                    <div className='div-button'><button><Link className='link-button' to='/login'>SIGN IN</Link></button></div>
+                    <div className='div-button'><button><Link className='link-button' to='/login'>LOG IN</Link></button></div>
                 </div>
             </div>
             <div className='div-right'>
@@ -165,25 +172,27 @@ const Register = (props) => {
                 </div>
                 <br />
                 <br />
-                <p>or use your email for registration</p>
-                <br />
+                <p>Fill in the data to make your registration</p>
                 <form>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={name} type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
-                    <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required />
+                    <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required multiple />
                     <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
+                    <LockOpenIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <input value={confirmPassword} type='password' placeholder='Confirm Password' onChange={e => setConfirmPassword(e.target.value)} required />
+                    <br />
                     <label>
                         <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('cliente')} />
-                        Cliente
+                            Client
                         </label>
                     <label>
                         <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('profissional')} />
-                        Profissional
+                        Professional
                         </label>
                     <div className='div-button-right'>
                         <button type="submit" onClick={handleClick}>
