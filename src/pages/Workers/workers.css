@@ -24,3 +24,27 @@
     margin-top: 0;
     padding: 5px;
 }
+
+.div-login-workers{
+    padding-left: 75%;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 50px;
+    
+}
+
+.link-login-workers {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all ease 0.2s;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 25px;
+}
+
+.link-login-workers:hover{
+    color: #ccc;
+}

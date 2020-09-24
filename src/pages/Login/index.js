@@ -46,7 +46,8 @@ const Login = (props) => {
             setPassword('')
         } else if (password === user.password) {
             alert('Logado com sucesso')
-            routeChange(user.perfil)
+            localStorage.setItem('user', user.name)
+            routeChange(user.perfil, user.id)
         } else if (password !== user.password) {
             alert('Password invalido')
             setPassword('')
@@ -56,8 +57,8 @@ const Login = (props) => {
     //-------------------------------------------------------------------------------------
     const history = useHistory()
 
-    const routeChange = (perfil) => {
-        let path = '/'.concat(perfil);
+    const routeChange = (perfil, id) => {
+        let path = '/'.concat(`${perfil}/${id}`);
         history.push(path)
     }
     //---------------------------------------------------------------------------------------

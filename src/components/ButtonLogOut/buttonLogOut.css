@@ -1,0 +1,22 @@
+.div-button-log-out{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.button-log-out{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all ease 0.2s;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 25px;
+    border: none;
+    background: none;
+}
+
+.button-log-out:hover{
+    color: #ccc;
+}

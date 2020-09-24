@@ -14,8 +14,8 @@ function Routes(props) {
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
             <Route path='/workers/:id' component={Workers}/>
-            <Route path='/cliente' component={HomeCliente}/>
-            <Route path='/profissional' component={HomeProfissional}/>
+            <Route path='/cliente/:id' component={HomeCliente}/>
+            <Route path='/profissional/:id' component={HomeProfissional}/>
             <Redirect from='*' to='/' />
         </Switch>
     )

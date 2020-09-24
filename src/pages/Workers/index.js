@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './workers.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import {Link} from 'react-router-dom';
 
 const Workers = (props) => {
 
     const [listWorkers, setListWorkers] = useState([])
 
     useEffect(() => {
+
+        const id = props.match.params.id
+
         try {
-            fetch(`http://localhost:3001/workers/${props.match.params.id}`)
+            fetch(`http://localhost:3001/workers/${id}`)
                 .then(response => response.json())
                 .then(
                     (result) => {
@@ -19,11 +23,14 @@ const Workers = (props) => {
         catch (error) {
             console.error(error)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <div>
-            <Header />
+            <Header>
+            <div className='div-login-workers'><Link className='link-login-workers' to='/login' >LOGIN</Link></div>
+            </Header>
             <div className='div-workers'>
                 <h4>Informações</h4>
                 <p><strong>Name: </strong>{listWorkers.name}</p>
