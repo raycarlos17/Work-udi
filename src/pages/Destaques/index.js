@@ -74,7 +74,7 @@ const Destaques = () => {
 
     return (
         <div className='div-principal-destaques'>
-            <h2>DESTAQUES</h2>
+            <h2>HIGHLIGHTS</h2>
             <hr />
             <div className='div-slider'>
                 <Slider className='slider' {...settings}>

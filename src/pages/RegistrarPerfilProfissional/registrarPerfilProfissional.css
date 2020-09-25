@@ -1,0 +1,60 @@
+.div-register-perfil-prof-principal{
+    background-color: #3AB0A2;
+    border-radius: 20px;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.div-register-perfil-prof-principal h1{
+    color: #fff;
+    text-align: center;
+}
+
+.div-register-perfil-prof-principal label{
+    color: #fff;
+}
+
+.div-register-perfil-prof-principal input{
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.div-register-perfil-prof-principal form{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.div-button-registrar-profissional{
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-button-registrar-profissional button{
+    background: #fff;
+    border: none;
+    margin: 20px;
+    color: #3AB0A2;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    transition: ease all 0.2s;
+}
+
+.div-button-registrar-profissional button:hover {
+    background: #ccc;
+}
+
+.link-button-perfil{
+    text-decoration: none;
+    color: #3AB0A2;
+}

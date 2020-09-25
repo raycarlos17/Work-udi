@@ -16,7 +16,7 @@ const Home = (props) => {
                     <button className='icon-search'>
                         <SearchIcon style={{ fontSize: 30 }} />
                     </button>
-                    <input type='text' placeholder='Pesquisar' />
+                    <input type='text' placeholder='Search' />
                 </form>
             </div>
             <div className='div-login'><Link className='link-login' to='/login' >LOGIN</Link></div>
@@ -25,9 +25,9 @@ const Home = (props) => {
             <div className='div-info'>
                 <div className='logo'><h1>WU</h1></div>
                 <div className='info-site'>
-                    <p>THE BEST PROFESSIONALS FOR WHATEEVER YOU NEED, YOU CAN FIND HERE..</p>
+                    <p>THE BEST PROFESSIONALS FOR WHATEEVER YOU NEED, YOU CAN FIND HERE...</p>
                     <div >
-                        <button className='button-register'><Link className='link-register' to='/register'>CADASTRE-SE AGORA</Link></button>
+                        <button className='button-register'><Link className='link-register' to='/register'>REGISTER NOW</Link></button>
                     </div>
                 </div>
             </div>

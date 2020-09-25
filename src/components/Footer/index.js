@@ -1,10 +1,10 @@
 import React from 'react';
 import './footer.css';
 
-const Footer = () => {
+const Footer = (props) => {
     return (
-        <div className='div-footer'>
-            <p>@ Direitos reservados</p>
+        <div className='div-footer' style={{position: props.position}}>
+            <p>@ All rights reserved</p>
         </div>
     )
 }

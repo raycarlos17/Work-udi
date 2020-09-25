@@ -32,7 +32,7 @@ const Workers = (props) => {
             <div className='div-login-workers'><Link className='link-login-workers' to='/login' >LOGIN</Link></div>
             </Header>
             <div className='div-workers'>
-                <h4>Informações</h4>
+                <h4>Contact Information</h4>
                 <p><strong>Name: </strong>{listWorkers.name}</p>
                 <br />
                 <hr/>
@@ -47,7 +47,7 @@ const Workers = (props) => {
                 <hr/>
                 <p><strong>Description: </strong>{listWorkers.description}</p>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
 }

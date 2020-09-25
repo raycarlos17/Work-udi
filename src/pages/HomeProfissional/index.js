@@ -1,35 +1,104 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import ButtonLogOut from '../../components/ButtonLogOut';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import {Link} from 'react-router-dom';
 import './homeProfissional.css';
 
 const HomeProfissional = (props) => {
 
-    const user = localStorage.getItem('user')
+    //const user = localStorage.getItem('user')
     const [listUser, setListUser] = useState([])
+    const [listWorker, setListWorker] = useState([])
 
     useEffect(() => {
+        async function fetchData() {
+            const id = await props.match.params.id
+            let user;
 
-        const id = props.match.params.id
+            try {
+                fetch(`http://localhost:3001/users/${id}`)
+                    .then(async response => await response.json())
+                    .then(
+                        async (result) => {
+                            await setListUser(result);
+                            user = result
+                            try {
+                                fetch(`http://localhost:3001/workers`)
+                                    .then(async response => await response.json())
+                                    .then(
+                                        async (result) => {
+                                            result.map(async worker => {
+                                                if (user.email === worker.emailLogin) {
+                                                    await setListWorker(worker)
+                                                }
+                                                else {
+                                                    setListWorker(false)
+                                                }
+                                            })
 
-        try {
-            fetch(`http://localhost:3001/users/${id}`)
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListUser(result);
-                    })
+                                        }
+                                    )
+
+                            }
+                            catch (error) {
+                                console.log(error)
+                            }
+                        })
+            }
+            catch (error) {
+                console.error(error)
+            }
         }
-        catch (error) {
-            console.error(error)
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    function divWorker() {
+        if (listWorker !== false) {
+            return (
+                <div className='div-dados-worker'>
+                    <h1>Dados Profissionais</h1>
+                    <p><strong>Name: </strong>{listWorker.name}</p>
+                    <hr />
+                    <p><strong>Email Profissional: </strong>{listWorker.email}</p>
+                    <hr />
+                    <p><strong>Occupation: </strong>{listWorker.occupation}</p>
+                    <hr />
+                    <p><strong>Contact: </strong>{listWorker.contact}</p>
+                    <hr />
+                    <p><strong>Description: </strong>{listWorker.description}</p>
+                </div>
+            )
+        }
+    }
 
     return (
         <div>
-            PAGINA DO PROFISSIONAL
-            <br/>
-            BEM VINDO {user}
-            BEM VINDO {listUser.name}
+            <Header>
+                <div className='div-ButtonLogOut'>
+                    <ButtonLogOut />
+                </div>
+            </Header>
+            <div className='div-inf-profissional-principal'>
+                <h1>Bem vindo(a) {listUser.name}</h1>
+                <h2>Dados de seu perfil</h2>
+                <hr />
+                <p><strong>Name: </strong>{listUser.name}</p>
+                <hr />
+                <p><strong>Email: </strong>{listUser.email}</p>
+                <hr />
+                <p><strong>Perfil: </strong>{listUser.perfil}</p>
+            </div>
+            {divWorker()}
+            <div className='buttons-profissional'>
+                <div className='button-alterar-dados-profissional'>
+                    <button>ALTERAR PERFIL</button>
+                </div>
+                <div className='button-adiciona-dados-profissional'>
+                    <button><Link to={`/register/perfil/profissional/${listUser.id}`} className='link-button-adiciona-perfil-prof'>DADOS PROFISSIONAIS</Link></button>
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }

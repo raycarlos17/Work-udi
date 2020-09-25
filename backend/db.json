@@ -2,113 +2,21 @@
   "users": [
     {
       "id": 1,
-      "name": "profissional1",
-      "email": "profissional1@gmail.com",
-      "perfil": "profissional",
-      "password": "123456"
-    },
-    {
-      "id": 2,
-      "name": "cliente1",
-      "email": "cliente1@gmail.com",
-      "perfil": "cliente",
-      "password": "123456"
-    },
-    {
-      "id": 3,
       "name": "Ray Carlos",
       "email": "raycarlos@gmail.com",
-      "perfil": "cliente",
+      "perfil": "profissional",
       "password": "123456"
-    },
-    {
-      "id": 4,
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "password": "123456",
-      "perfil": "profissional"
     }
   ],
   "workers": [
     {
       "id": 1,
-      "name": "Fulano de tal 1",
-      "email": "fulano1@gmail.com",
-      "occupation": "Eletricista",
+      "name": "Ray Carlos",
+      "email": "raycarlos_ferragista@gmail.com",
+      "emailLogin": "raycarlos@gmail.com",
+      "occupation": "Ferragista",
       "contact": "34912341234",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 2,
-      "name": "Fulano de tal 2",
-      "email": "fulano2@gmail.com",
-      "occupation": "Encanador",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 3,
-      "name": "Fulano de tal 3",
-      "email": "fulano3@gmail.com",
-      "occupation": "Motorista",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 4,
-      "name": "Fulano de tal 4",
-      "email": "fulano4@gmail.com",
-      "occupation": "Jardineiro",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 5,
-      "name": "Fulano de tal 5",
-      "email": "fulano5@gmail.com",
-      "occupation": "Ferrajista",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 6,
-      "name": "Fulano de tal 6",
-      "email": "fulano6@gmail.com",
-      "occupation": "Fachineiro",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 7,
-      "name": "Fulano de tal 7",
-      "email": "fulano7@gmail.com",
-      "occupation": "Pintor",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 8,
-      "name": "Fulano de tal 8",
-      "email": "fulano8@gmail.com",
-      "occupation": "Pedreiro",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 9,
-      "name": "Fulano de tal 9",
-      "email": "fulano9@gmail.com",
-      "occupation": "Eletricista",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
-    },
-    {
-      "id": 10,
-      "name": "Fulano de tal 10",
-      "email": "fulano10@gmail.com",
-      "occupation": "Mecanico",
-      "contact": "34945674567",
-      "description": "Descrição da pessoa..."
+      "description": "Trabalho como ferragista a 5 anos"
     }
   ]
 }

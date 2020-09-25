@@ -133,7 +133,7 @@ const Register = (props) => {
         setEmail('')
         setPassword('')
         setPerfil('')
-
+        setConfirmPassword('')
     }
     //-----------------------------------------------------------------------------------------
     const history = useHistory()

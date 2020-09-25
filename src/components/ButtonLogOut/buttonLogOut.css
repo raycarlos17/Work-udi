@@ -11,10 +11,11 @@
     color: #ffffff;
     font-weight: bold;
     transition: all ease 0.2s;
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 25px;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .button-log-out:hover{

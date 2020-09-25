@@ -6,16 +6,18 @@ import Register from './pages/Register';
 import Workers from './pages/Workers';
 import HomeCliente from './pages/HomeCliente';
 import HomeProfissional from './pages/HomeProfissional';
+import RegistrarPerfilProfissional from './pages/RegistrarPerfilProfissional';
 
 function Routes(props) {
     return (
         <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            <Route path='/workers/:id' component={Workers}/>
-            <Route path='/cliente/:id' component={HomeCliente}/>
-            <Route path='/profissional/:id' component={HomeProfissional}/>
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/workers/:id' component={Workers}/>
+            <Route exact path='/cliente/:id' component={HomeCliente}/>
+            <Route exact path='/profissional/:id' component={HomeProfissional}/>
+            <Route exact path='/register/perfil/profissional/:id' component={RegistrarPerfilProfissional}/>
             <Redirect from='*' to='/' />
         </Switch>
     )
