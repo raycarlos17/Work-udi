@@ -13,7 +13,7 @@ const Login = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [listUsers, setListUsers] = useState([])
-    //-------------------------------------------------------------------------------
+
     useEffect(() => {
         try {
             fetch('http://localhost:3001/users')
@@ -27,7 +27,30 @@ const Login = (props) => {
             console.error(error)
         }
     }, [])
-    //------------------------------------------------------------------------------------
+
+    //     useEffect(() => {
+    //         testBackend()
+    //     }, [])
+    //    async function testBackend() {
+    //         try{
+    //             let response = await fetch('http://localhost:5000/rotaTeste', {   
+    //                 method: 'GET',
+    //                 headers: {
+    //                     'Accept': 'application/json',
+    //                     'Content-type': 'application/json',
+    //                     'Access-Control-Allow-Origin': '*'
+    //                 }
+    //             })
+    //             console.log(response)
+    //             // let json = response.json;
+    //             // console.log(json)
+    //             // return json
+    //             return response
+    //         } catch(error) {
+    //             console.error(error)
+    //         }
+    //     }
+
     function confirmLogin() {
         let user
         listUsers.map(list => {
@@ -54,14 +77,14 @@ const Login = (props) => {
         }
 
     }
-    //-------------------------------------------------------------------------------------
+
     const history = useHistory()
 
     const routeChange = (perfil, id) => {
         let path = '/'.concat(`${perfil}/${id}`);
         history.push(path)
     }
-    //---------------------------------------------------------------------------------------
+
     return (
         <div className='div-principal'>
             <div className='div-left'>

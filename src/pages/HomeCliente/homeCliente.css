@@ -56,3 +56,8 @@
 .button-alterar-dados-client button:hover{
     background: #246b63;
 }
+
+.link-button-altera-perfil{
+    text-decoration: none;
+    color: #fff;
+}

@@ -18,20 +18,7 @@ const Register = (props) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [perfil, setPerfil] = useState('')
     const [listUsers, setListUsers] = useState([])
-    // const [listUsersHard, setListUsersHard] = useState([
-    //     {
-    //         id: 1,
-    //         name: "Fulado de tal",
-    //         email: "fulano1@gmail.com",
-    //         password: "123456"
-    //     }, {
-    //         id: 2,
-    //         name: "Fulado de tal",
-    //         email: "fulano1@gmail.com",
-    //         password: "123456"
-    //     }
-    // ])
-    //----------------------------------------------------------------------------
+
     useEffect(() => {
         try {
             fetch('http://localhost:3001/users')
@@ -45,7 +32,7 @@ const Register = (props) => {
             console.error(error)
         }
     }, [])
-    //-------------------------------------------------------------------------------------
+
     async function registerUserBack() {
         let list = await listUsers
         let id = await list.length + 1
@@ -78,27 +65,12 @@ const Register = (props) => {
             console.log(error)
         }
     }
-    //---------------------------------------------------------------------------------
-    // function registerUserHard(name, email, password) {
 
-    //     let list = listUsersHard
-
-    //     let id = list.length + 1
-    //     list.push({
-    //         id: id,
-    //         name: name,
-    //         email: email,
-    //         password: password,
-    //     })
-    //     setListUsersHard(list)
-    // }
-    //----------------------------------------------------------------------------------------
     function handleClick(e) {
         e.preventDefault()
-        // registerUserHard(name, email, password)
         confirmRegister(email)
     }
-    //-----------------------------------------------------------------------------------------
+
     function confirmRegister(email) {
 
         let emailConfirmerd = true
@@ -127,7 +99,7 @@ const Register = (props) => {
         }
 
     }
-    //---------------------------------------------------------------------------------------------
+
     function clearForms() {
         setName('')
         setEmail('')
@@ -135,14 +107,14 @@ const Register = (props) => {
         setPerfil('')
         setConfirmPassword('')
     }
-    //-----------------------------------------------------------------------------------------
+
     const history = useHistory()
 
     const routeChange = () => {
         let path = '/login'
         history.push(path)
     }
-    //-----------------------------------------------------------------------------------------
+
     return (
         <div className='div-principal'>
             <div className='div-left'>
@@ -173,7 +145,7 @@ const Register = (props) => {
                 <br />
                 <br />
                 <p>Fill in the data to make your registration</p>
-                <form>
+                <form className='form-register-user'>
                     <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={name} type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
@@ -186,11 +158,11 @@ const Register = (props) => {
                     <LockOpenIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={confirmPassword} type='password' placeholder='Confirm Password' onChange={e => setConfirmPassword(e.target.value)} required />
                     <br />
-                    <label>
+                    <label className='label-register-user'>
                         <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('cliente')} />
                             Client
                         </label>
-                    <label>
+                    <label className='label-register-user'>
                         <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('profissional')} />
                         Professional
                         </label>

@@ -92,7 +92,7 @@ const HomeProfissional = (props) => {
             {divWorker()}
             <div className='buttons-profissional'>
                 <div className='button-alterar-dados-profissional'>
-                    <button>ALTERAR PERFIL</button>
+                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>ALTERAR PERFIL</Link></button>
                 </div>
                 <div className='button-adiciona-dados-profissional'>
                     <button><Link to={`/register/perfil/profissional/${listUser.id}`} className='link-button-adiciona-perfil-prof'>DADOS PROFISSIONAIS</Link></button>

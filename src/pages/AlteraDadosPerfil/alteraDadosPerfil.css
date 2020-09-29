@@ -1,0 +1,37 @@
+.div-alterar-perfil{
+    background-color: #3AB0A2;
+    border-radius: 20px;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.div-alterar-perfil h1{
+    color: #fff;
+    text-align: center;
+}
+
+.div-alterar-perfil label{
+    color: #fff;
+}
+
+.div-alterar-perfil form{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.div-alterar-perfil .input-altera-perfil{
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.input-radio-alterar{
+    width: 20px;
+    margin-left: 50px
+}

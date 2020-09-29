@@ -10,7 +10,7 @@
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    transition: all ease 0.2s;
+ 
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
     border: none;
@@ -19,5 +19,15 @@
 }
 
 .button-log-out:hover{
+    color: #ccc;
+}
+
+.link-button-log-out{
+    text-decoration: none;
+    color: #fff;
+    transition: all ease 0.2s;
+}
+
+.link-button-log-out:hover{
     color: #ccc;
 }

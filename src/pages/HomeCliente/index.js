@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './homeCliente.css';
-import Footer from '../../components/Footer'
+import Footer from '../../components/Footer';
 import ButtonLogOut from '../../components/ButtonLogOut';
-import Header from '../../components/Header'
+import Header from '../../components/Header';
+import { Link } from 'react-router-dom';
 
 const HomeCliente = (props) => {
 
@@ -46,7 +47,7 @@ const HomeCliente = (props) => {
                 <p><strong>Perfil: </strong>{listUser.perfil}</p>
             </div>
             <div className='button-alterar-dados-client'>
-                <button>ALTERAR PERFIL</button>
+                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>ALTERAR PERFIL</Link></button>
             </div>
            
             <Footer />

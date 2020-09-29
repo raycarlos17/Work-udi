@@ -146,7 +146,7 @@ input{
     width: 10px;
 }
 
-form label{
+.form-register-user .label-register-user{
     display: inline;
     align-content: center;
     align-items: center;
