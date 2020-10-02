@@ -16,7 +16,7 @@ function Routes(props) {
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/workers/:id' component={Workers}/>
-            <Route exact path='/cliente/:id' component={HomeCliente}/>
+            <Route exact path='/cliente/:id' component={HomeCliente} isPrivate/>
             <Route exact path='/profissional/:id' component={HomeProfissional}/>
             <Route exact path='/register/perfil/profissional/:id' component={RegistrarPerfilProfissional}/>
             <Route exact path='/alterar/perfil/:id' component={AlterarDadosPerfil}/>

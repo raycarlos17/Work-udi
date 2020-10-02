@@ -12,25 +12,25 @@ const HomeProfissional = (props) => {
     const [listWorker, setListWorker] = useState([])
 
     useEffect(() => {
-        async function fetchData() {
-            const id = await props.match.params.id
+        function fetchData() {
+            const id = props.match.params.id
             let user;
 
             try {
                 fetch(`http://localhost:3001/users/${id}`)
-                    .then(async response => await response.json())
+                    .then(async response => response.json())
                     .then(
                         async (result) => {
-                            await setListUser(result);
+                             setListUser(result);
                             user = result
                             try {
                                 fetch(`http://localhost:3001/workers`)
-                                    .then(async response => await response.json())
+                                    .then(async response => response.json())
                                     .then(
                                         async (result) => {
                                             result.map(async worker => {
                                                 if (user.email === worker.emailLogin) {
-                                                    await setListWorker(worker)
+                                                    setListWorker(worker)
                                                 }
                                                 else {
                                                     setListWorker(false)
@@ -74,6 +74,7 @@ const HomeProfissional = (props) => {
 
     return (
         <div>
+          
             <Header>
                 <div className='div-ButtonLogOut'>
                     <ButtonLogOut />
@@ -87,6 +88,8 @@ const HomeProfissional = (props) => {
                 <hr />
                 <p><strong>Email: </strong>{listUser.email}</p>
                 <hr />
+                <p><strong>CPF: </strong>{listUser.cpf}</p>
+                <hr/>
                 <p><strong>Perfil: </strong>{listUser.perfil}</p>
             </div>
             {divWorker()}
@@ -104,3 +107,4 @@ const HomeProfissional = (props) => {
 }
 
 export default HomeProfissional
+

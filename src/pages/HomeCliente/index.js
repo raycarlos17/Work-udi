@@ -35,7 +35,7 @@ const HomeCliente = (props) => {
                     <ButtonLogOut />
                 </div>
             </Header>
-          
+
             <div className='div-inf-client-principal'>
                 <h1>Bem vindo(a) {listUser.name}</h1>
                 <h2>Dados de seu perfil</h2>
@@ -44,12 +44,14 @@ const HomeCliente = (props) => {
                 <hr />
                 <p><strong>Email: </strong>{listUser.email}</p>
                 <hr />
+                <p><strong>CPF: </strong>{listUser.cpf}</p>
+                <hr />
                 <p><strong>Perfil: </strong>{listUser.perfil}</p>
             </div>
             <div className='button-alterar-dados-client'>
                 <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>ALTERAR PERFIL</Link></button>
             </div>
-           
+
             <Footer />
         </div>
     )

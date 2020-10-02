@@ -106,7 +106,7 @@ const Login = (props) => {
                 </div>
             </div>
             <div className='div-right'>
-                <div className='div-title'>Login</div>
+                <div className='div-title-login'>Login</div>
                 <p>Fill in the fields and login</p>
                 <br />
                 <br />

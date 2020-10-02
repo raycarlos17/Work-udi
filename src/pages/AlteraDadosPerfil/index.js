@@ -9,6 +9,7 @@ const AlteraDadosPerfil = (props) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [cpf, setCpf] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [perfil, setPerfil] = useState('')
@@ -26,8 +27,8 @@ const AlteraDadosPerfil = (props) => {
                         setListUser(result);
                         setName(result.name);
                         setEmail(result.email);
+                        setCpf(result.cpf)
                         setPerfil(result.perfil);
-                        console.log(result)
                     })
         }
         catch (error) {
@@ -49,6 +50,7 @@ const AlteraDadosPerfil = (props) => {
                     "id": listUser.id,
                     "name": name,
                     "email": email,
+                    "cpf": cpf,
                     "password": password,
                     "perfil": perfil
                 })
@@ -62,6 +64,31 @@ const AlteraDadosPerfil = (props) => {
             alert('Erro ao alterar dados')
 
             console.log(error)
+        }
+    }
+
+    function perfilSelect() {
+        if (listUser.perfil === 'cliente') {
+            return (
+                <select className='select-dados-perfil' defaultValue={'cliente'} onChange={e => setPerfil(e.target.value)}>
+                    <optgroup label="Profile">
+                        <option value={'cliente'}>Client</option>
+                        <option value={'profissional'} >Professional</option>
+                    </optgroup>
+                </select>
+            )
+
+        }
+        else if (listUser.perfil === 'profissional') {
+            return (
+                <select className='select-dados-perfil' defaultValue={'profissional'} onChange={e => setPerfil(e.target.value)}>
+                    <optgroup label="Profile">
+                        <option value={'cliente'}>Client</option>
+                        <option value={'profissional'}>Professional</option>
+                    </optgroup>
+                </select>
+            )
+
         }
     }
 
@@ -101,6 +128,10 @@ const AlteraDadosPerfil = (props) => {
                     <br />
                     <input className='input-altera-perfil' value={email || ''} onChange={e => setEmail(e.target.value)} type='text' placeholder={email} />
                     <br />
+                    <label>CPF: </label>
+                    <br />
+                    <input className='input-altera-perfil' value={cpf || ''} onChange={e => setCpf(e.target.value)} type='text' placeholder={cpf} />
+                    <br />
                     <label>Password: </label>
                     <br />
                     <input className='input-altera-perfil' value={password || ''} onChange={e => setPassword(e.target.value)} type='password' placeholder='Password' />
@@ -109,14 +140,7 @@ const AlteraDadosPerfil = (props) => {
                     <br />
                     <input className='input-altera-perfil' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} type='password' placeholder='Confirm Password' />
                     <br />
-                    <label className='label-radio-alterar'>
-                        <input name='perfil' className='input-radio-alterar' type='radio' value={perfil} onChange={() => setPerfil('cliente')} />
-                            Client
-                        </label>
-                    <label className='label-radio-alterar'>
-                        <input name='perfil' className='input-radio-alterar' type='radio' value={perfil} onChange={() => setPerfil('profissional')} />
-                        Professional
-                        </label>
+                    {perfilSelect()}
                     <div className='div-button-registrar-profissional'>
                         <button onClick={handleClickUpdateWorker}>ALTERAR</button>
                         <button><Link className='link-button-perfil' to={`/${listUser.perfil}/${listUser.id}`}>PERFIL</Link></button>

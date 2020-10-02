@@ -9,14 +9,17 @@ import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import HomeIcon from '@material-ui/icons/Home';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
+import PeopleIcon from '@material-ui/icons/People';
+import RecentActorsIcon from '@material-ui/icons/RecentActors';
 
 const Register = (props) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [cpf, setCpf] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
-    const [perfil, setPerfil] = useState('')
+    const [perfil, setPerfil] = useState('cliente')
     const [listUsers, setListUsers] = useState([])
 
     useEffect(() => {
@@ -48,6 +51,7 @@ const Register = (props) => {
                     "id": id,
                     "name": name,
                     "email": email,
+                    "cpf": cpf,
                     "password": password,
                     "perfil": perfil
                 })
@@ -73,22 +77,29 @@ const Register = (props) => {
 
     function confirmRegister(email) {
 
-        let emailConfirmerd = true
+        let emailConfirmed = true
+        let cpfConfirmed = true
 
         listUsers.map(users => {
 
             if (email === users.email) {
                 alert('Email ja registrado em sistema')
-                clearForms()
-                return emailConfirmerd = false
+                setEmail('')
+                return emailConfirmed = false
             }
-            return emailConfirmerd;
+
+            if(cpf === users.cpf) {
+                alert('CPF ja registrado em sistema')
+                setCpf('')
+                return cpfConfirmed = false
+            }
+            return emailConfirmed;
         })
-        if (email === '' || name === '' || password === '' || perfil === '') {
+        if (email === '' || name === '' || password === '' || perfil === '' || cpf === '') {
             return alert('Preencher todos os campos para fazer o cadastro')
         }
 
-        if (emailConfirmerd === true) {
+        if (emailConfirmed === true && cpfConfirmed === true) {
             if (password === confirmPassword) {
                 return registerUserBack().then(resultado => (JSON.stringify(resultado)))
             } else {
@@ -103,6 +114,7 @@ const Register = (props) => {
     function clearForms() {
         setName('')
         setEmail('')
+        setCpf('')
         setPassword('')
         setPerfil('')
         setConfirmPassword('')
@@ -152,20 +164,24 @@ const Register = (props) => {
                     <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required multiple />
                     <br />
+                    <RecentActorsIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <input value={cpf} type='text' placeholder='CPF' onChange={e => setCpf(e.target.value)} required multiple />
+                    <br />
                     <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
                     <LockOpenIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <input value={confirmPassword} type='password' placeholder='Confirm Password' onChange={e => setConfirmPassword(e.target.value)} required />
                     <br />
-                    <label className='label-register-user'>
-                        <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('cliente')} />
-                            Client
-                        </label>
-                    <label className='label-register-user'>
-                        <input name='perfil' className='input-radio' type='radio' value={perfil} onChange={() => setPerfil('profissional')} />
-                        Professional
-                        </label>
+                    <PeopleIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <select className='select-login' onChange={e => setPerfil(e.target.value)}>
+                    <optgroup label="Profile">
+                        <option value='cliente'  >Client</option>
+                        <option value='profissional' >Professional</option>
+                        </optgroup>
+                    </select>
+
+                    <br/>
                     <div className='div-button-right'>
                         <button type="submit" onClick={handleClick}>
                             SIGN UP
@@ -179,3 +195,37 @@ const Register = (props) => {
 }
 
 export default Register;
+
+// function registerUserBack() {
+//     let list = listUsers
+//     let id = list.length + 1
+//     try {
+//         let retorno = fetch('http://localhost:5000/users/cadastro', {
+//             method: 'POST',
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+//                 'Access-Control-Allow-Origin': '*'
+//             },
+//             body: JSON.stringify({
+//                // "_id": id,
+//                 "name": name,
+//                 "email": email,
+//                 "cpf": cpf,
+//                 "password": password,
+//                 "perfil": perfil
+//             })
+//         })
+
+//         let json = retorno.json()
+//         alert('Registrado com sucesso')
+//         clearForms()
+//         routeChange()
+//         return json
+
+//     } catch (error) {
+//         alert('Erro ao fazer o registro')
+//         clearForms()
+//         console.log(error)
+//     }
+// }

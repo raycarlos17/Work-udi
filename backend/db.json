@@ -2,15 +2,17 @@
   "users": [
     {
       "id": 1,
-      "name": "Ray Carlos",
+      "name": "Ray Carlos ",
       "email": "raycarlos@gmail.com",
-      "perfil": "profissional",
-      "password": "123456"
+      "cpf": "14774125845",
+      "password": "123456",
+      "perfil": "profissional"
     },
     {
       "id": 2,
       "name": "Carlos",
       "email": "carlos@gmail.com",
+      "cpf": "85245695132",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -18,6 +20,7 @@
       "id": 3,
       "name": "Vanessa",
       "email": "vanessa@gmail.com",
+      "cpf": "25885214774",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -25,6 +28,7 @@
       "id": 4,
       "name": "Thiago",
       "email": "thiago@gmail.com",
+      "cpf": "75335785265",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -32,6 +36,7 @@
       "id": 5,
       "name": "Lucas",
       "email": "lucas@gmail.com",
+      "cpf": "98985214787",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -39,6 +44,7 @@
       "id": 6,
       "name": "Fernando",
       "email": "fernando@gmail.com",
+      "cpf": "36985214774",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -46,6 +52,7 @@
       "id": 7,
       "name": "Gabriel",
       "email": "gabriel@gmail.com",
+      "cpf": "74102589630",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -53,6 +60,7 @@
       "id": 8,
       "name": "Agnaldo",
       "email": "agnaldo@gmail.com",
+      "cpf": "98798798798",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -60,6 +68,7 @@
       "id": 9,
       "name": "Pedro",
       "email": "pedro@gmail.com",
+      "cpf": "65465465465",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -67,6 +76,7 @@
       "id": 10,
       "name": "João",
       "email": "joao@gmail.com",
+      "cpf": "32132132132",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -74,6 +84,7 @@
       "id": 11,
       "name": "Carol",
       "email": "carol@gmail.com",
+      "cpf": "12312312312",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -81,6 +92,7 @@
       "id": 12,
       "name": "Breno",
       "email": "breno@gmail.com",
+      "cpf": "45645645645",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -88,6 +100,7 @@
       "id": 13,
       "name": "Raphael Henrique",
       "email": "raphael@gmail.com",
+      "cpf": "78978978978",
       "password": "123456",
       "perfil": "profissional"
     },
@@ -95,20 +108,12 @@
       "id": 14,
       "name": "Rafael",
       "email": "rafael@gmail.com",
+      "cpf": "74174174174",
       "password": "123456",
       "perfil": "profissional"
     }
   ],
   "workers": [
-    {
-      "id": 1,
-      "name": "Ray Carlos",
-      "email": "raycarlos_ferragista@gmail.com",
-      "emailLogin": "raycarlos@gmail.com",
-      "occupation": "Ferragista",
-      "contact": "34912341234",
-      "description": "Trabalho como ferragista a 5 anos"
-    },
     {
       "id": 2,
       "name": "Carlos",
@@ -175,6 +180,15 @@
       "emailLogin": "breno@gmail.com",
       "occupation": "Jardineiro",
       "contact": "34973918246"
+    },
+    {
+      "id": 1,
+      "name": "Ray Ferragista",
+      "email": "ray_ferragista@gmail.com",
+      "emailLogin": "raycarlos@gmail.com",
+      "occupation": "Ferragista",
+      "contact": "34987532587",
+      "description": "Ferragista a 5 anos...."
     }
   ]
 }
