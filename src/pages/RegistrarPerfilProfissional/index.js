@@ -4,6 +4,11 @@ import Header from '../../components/Header';
 import ButtonLogOut from '../../components/ButtonLogOut';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
+import BuildIcon from '@material-ui/icons/Build';
+import PhoneIcon from '@material-ui/icons/Phone';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 const RegistrarPerfilProfissional = (props) => {
 
@@ -198,7 +203,7 @@ const RegistrarPerfilProfissional = (props) => {
     function buttonRegister(){
         if(listWorker.id === undefined) {
             return(
-                <button onClick={handleClickSaveWorker}>REGISTRAR</button>
+                <button onClick={handleClickSaveWorker}>REGISTER</button>
             )
         }
     }
@@ -211,35 +216,35 @@ const RegistrarPerfilProfissional = (props) => {
                 </div>
             </Header>
             <div className='div-register-perfil-prof-principal'>
-                <h1>DADOS PROFISSIONAIS</h1>
+                <h1>PROFESSIONAL DATA</h1>
                 <hr />
                 <form>
-                    <label>*Nome Profissional: </label>
+                    <label><PersonIcon className='icon-register-perfil-prof'/>Professional Name (Required): </label>
                     <br />
                     <input value={name || ''} onChange={e => setName(e.target.value)} type='text' placeholder={name} />
                     <br />
-                    <label>*Email Profissional: </label>
+                    <label><EmailIcon className='icon-register-perfil-prof'/>Professional Email (Required): </label>
                     <br />
                     <input value={email || ''} onChange={e => setEmail(e.target.value)} type='text' placeholder={email} />
                     <br />
-                    <label>*Occupation: </label>
+                    <label><BuildIcon className='icon-register-perfil-prof'/>Occupation (Required): </label>
                     <br />
                     <input value={occupation || ''} onChange={e => setOccupation(e.target.value)} type='text' placeholder={occupation} />
                     <br />
-                    <label>Contact: </label>
+                    <label><PhoneIcon className='icon-register-perfil-prof'/> Contact: </label>
                     <br />
                     <input value={contact || ''} onChange={e => setContact(e.target.value)} type='text' placeholder={contact} />
                     <br />
-                    <label>Description: </label>
+                    <label><DescriptionIcon className='icon-register-perfil-prof'/> Description: </label>
                     <br />
-                    <input value={description || ''} onChange={e => setDescription(e.target.value)} type='text' placeholder={description} />
+                    <textarea className='textarea-register-perfil-prof' value={description || ''} onChange={e => setDescription(e.target.value)} type='text' placeholder={description} ></textarea>
                     <br />
                     <div className='div-button-registrar-profissional'>
                         {buttonRegister()}
-                        <button onClick={handleClickUpdateWorker}>ALTERAR</button>
+                        <button onClick={handleClickUpdateWorker}>CHANGE</button>
                         <button onClick={handleClickDelete}>DELETE</button>
-                        <button onClick={(undefined)}>ATUALIZAR PÁGINA</button>
-                        <button><Link className='link-button-perfil' to={`/${listUser.perfil}/${listUser.id}`}>PERFIL</Link></button>
+                        <button onClick={(undefined)}>UPDATE PAGE</button>
+                        <button><Link className='link-button-perfil' to={`/${listUser.perfil}/${listUser.id}`}>BACK PROFILE</Link></button>
                     </div>
                 </form>
             </div>

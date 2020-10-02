@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react';
 import ButtonLogOut from '../../components/ButtonLogOut';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './homeProfissional.css';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
+import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import PeopleIcon from '@material-ui/icons/People';
+import BuildIcon from '@material-ui/icons/Build';
+import PhoneIcon from '@material-ui/icons/Phone';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 const HomeProfissional = (props) => {
 
@@ -21,7 +28,7 @@ const HomeProfissional = (props) => {
                     .then(async response => response.json())
                     .then(
                         async (result) => {
-                             setListUser(result);
+                            setListUser(result);
                             user = result
                             try {
                                 fetch(`http://localhost:3001/workers`)
@@ -57,16 +64,16 @@ const HomeProfissional = (props) => {
         if (listWorker !== false) {
             return (
                 <div className='div-dados-worker'>
-                    <h1>Dados Profissionais</h1>
-                    <p><strong>Name: </strong>{listWorker.name}</p>
+                    <h1>Professional Data</h1>
+                    <p><PersonIcon className='icon-perfil-profissional' /><strong>Name professional: </strong>{listWorker.name}</p>
                     <hr />
-                    <p><strong>Email Profissional: </strong>{listWorker.email}</p>
+                    <p><EmailIcon className='icon-perfil-profissional' /><strong>Email professional: </strong>{listWorker.email}</p>
                     <hr />
-                    <p><strong>Occupation: </strong>{listWorker.occupation}</p>
+                    <p><BuildIcon className='icon-perfil-profissional' /><strong>Occupation: </strong>{listWorker.occupation}</p>
                     <hr />
-                    <p><strong>Contact: </strong>{listWorker.contact}</p>
+                    <p><PhoneIcon className='icon-perfil-profissional' /><strong>Contact: </strong>{listWorker.contact}</p>
                     <hr />
-                    <p><strong>Description: </strong>{listWorker.description}</p>
+                    <p><DescriptionIcon className='icon-perfil-profissional' /><strong>Description: </strong>{listWorker.description}</p>
                 </div>
             )
         }
@@ -74,31 +81,31 @@ const HomeProfissional = (props) => {
 
     return (
         <div>
-          
+
             <Header>
                 <div className='div-ButtonLogOut'>
                     <ButtonLogOut />
                 </div>
             </Header>
             <div className='div-inf-profissional-principal'>
-                <h1>Bem vindo(a) {listUser.name}</h1>
-                <h2>Dados de seu perfil</h2>
+                <h1>Welcome to {listUser.name}</h1>
+                <h2>Profile data</h2>
                 <hr />
-                <p><strong>Name: </strong>{listUser.name}</p>
+                <p><PersonIcon className='icon-perfil-profissional' /><strong>Name: </strong>{listUser.name}</p>
                 <hr />
-                <p><strong>Email: </strong>{listUser.email}</p>
+                <p><EmailIcon className='icon-perfil-profissional' /><strong>Email: </strong>{listUser.email}</p>
                 <hr />
-                <p><strong>CPF: </strong>{listUser.cpf}</p>
-                <hr/>
-                <p><strong>Perfil: </strong>{listUser.perfil}</p>
+                <p><RecentActorsIcon className='icon-perfil-profissional' /><strong>CPF: </strong>{listUser.cpf}</p>
+                <hr />
+                <p><PeopleIcon className='icon-perfil-profissional' /><strong>Profile: </strong>{listUser.perfil}</p>
             </div>
             {divWorker()}
             <div className='buttons-profissional'>
                 <div className='button-alterar-dados-profissional'>
-                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>ALTERAR PERFIL</Link></button>
+                    <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
                 </div>
                 <div className='button-adiciona-dados-profissional'>
-                    <button><Link to={`/register/perfil/profissional/${listUser.id}`} className='link-button-adiciona-perfil-prof'>DADOS PROFISSIONAIS</Link></button>
+                    <button><Link to={`/register/perfil/profissional/${listUser.id}`} className='link-button-adiciona-perfil-prof'>PROFESSIONAL DATA</Link></button>
                 </div>
             </div>
             <Footer />

@@ -63,6 +63,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all ease 0.3s;
+   
 }
 
 .div-button button:hover{
@@ -129,6 +130,7 @@ input{
     border-radius: 10px;
     cursor: pointer;
     transition: all ease 0.3s;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .div-button-right button:hover{

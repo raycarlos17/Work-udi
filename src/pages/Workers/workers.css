@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .div-workers{
     margin: 40px;
-    border: 5px solid #3AB0A2;
-    background: #3AB0A2 ;
+    background: #3ab0a2 ;
     border-radius: 20px;
     width: 40%;
-    height: 500px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     color: #fff;
     padding: 20px;
-    margin-top: 110px;
-    margin-bottom: 110px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     font-size: 20px;
+    box-shadow: 7px 7px 7px #999;
 
 }
 
@@ -23,6 +24,8 @@
     text-align: center;
     margin-top: 0;
     padding: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .div-login-workers{
@@ -40,10 +43,27 @@
     color: #ffffff;
     font-weight: bold;
     transition: all ease 0.2s;
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 25px;
 }
 
 .link-login-workers:hover{
     color: #ccc;
+    font-size: 28px;
+}
+
+.div-workers p {
+    display: inline-flex;
+}
+
+.icon-workers{
+    margin-right: 10px;
+}
+
+.div-workers strong{
+    margin-right: 5px;
+}
+
+.icon-workers-info{
+    margin-left: 10px;
 }

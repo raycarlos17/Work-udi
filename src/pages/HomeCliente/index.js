@@ -4,6 +4,10 @@ import Footer from '../../components/Footer';
 import ButtonLogOut from '../../components/ButtonLogOut';
 import Header from '../../components/Header';
 import { Link } from 'react-router-dom';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
+import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import PeopleIcon from '@material-ui/icons/People';
 
 const HomeCliente = (props) => {
 
@@ -37,19 +41,19 @@ const HomeCliente = (props) => {
             </Header>
 
             <div className='div-inf-client-principal'>
-                <h1>Bem vindo(a) {listUser.name}</h1>
-                <h2>Dados de seu perfil</h2>
+                <h1>Welcome to {listUser.name}</h1>
+                <h2>Profile data</h2>
                 <hr />
-                <p><strong>Name: </strong>{listUser.name}</p>
+                <p><PersonIcon className='icon-perfil-cliente'/><strong>Name: </strong>{listUser.name}</p>
                 <hr />
-                <p><strong>Email: </strong>{listUser.email}</p>
+                <p><EmailIcon className='icon-perfil-cliente'/><strong>Email: </strong>{listUser.email}</p>
                 <hr />
-                <p><strong>CPF: </strong>{listUser.cpf}</p>
+                <p><RecentActorsIcon className='icon-perfil-cliente'/><strong>CPF: </strong>{listUser.cpf}</p>
                 <hr />
-                <p><strong>Perfil: </strong>{listUser.perfil}</p>
+                <p><PeopleIcon className='icon-perfil-cliente'/><strong>Profile: </strong>{listUser.perfil}</p>
             </div>
             <div className='button-alterar-dados-client'>
-                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>ALTERAR PERFIL</Link></button>
+                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
             </div>
 
             <Footer />

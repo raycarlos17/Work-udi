@@ -15,6 +15,7 @@
     bottom: 40px;
     float: right;
     background: rgba(0, 0, 0, 0.5);
+
 }
 
 .logo{
@@ -58,12 +59,13 @@
     width: 250px;
     border-radius: 20px;
     cursor: pointer;
-    border: #3AB0A2;
+    border: none;
     transition: all ease 0.2s;
 }
 
 .button-register:hover{
-    background-color:#276e66
+    background-color:#276e66;
+    font-size: 22px;
 }
 
 .link-register{
@@ -71,6 +73,5 @@
     color: #ffffff;
     font-weight: bold;
 }
-
 
 

@@ -3,7 +3,7 @@
 }
 
 .div-inf-client-principal{
-    border: 3px solid;
+    border: 3px solid #3AB0A2;
     background-color: #3AB0A2;
     border-radius: 20px;
     margin: 40px;
@@ -15,7 +15,8 @@
     width: auto;
     margin-right: 200px;
     margin-left: 200px;
-    margin-top: 100px;
+    margin-top: 75px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .div-inf-client-principal h1{
@@ -33,11 +34,21 @@
 
 .div-inf-client-principal p{
     margin-left: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.div-inf-client-principal .icon-perfil-cliente{
+    margin-right: 10px;
+}
+
+.div-inf-client-principal strong{
+    margin-right: 5px;
 }
 
 .button-alterar-dados-client{
     text-align: center;
-    margin-bottom: 300px;
+    margin-bottom: 75px;
 }
 
 .button-alterar-dados-client button{
@@ -51,10 +62,14 @@
     font-size: 15px;
     transition: all ease 0.2s;
     cursor: pointer;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .button-alterar-dados-client button:hover{
     background: #246b63;
+    width: 160px;
+    height: 60px;
+    font-size: 16px;
 }
 
 .link-button-altera-perfil{

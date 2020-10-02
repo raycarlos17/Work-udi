@@ -3,7 +3,7 @@
 }
 
 .div-inf-profissional-principal{
-    border: 3px solid;
+    border: 3px solid #3AB0A2;
     background-color: #3AB0A2;
     border-radius: 20px;
     margin: 40px;
@@ -15,6 +15,7 @@
     width: auto;
     margin-right: 200px;
     margin-left: 200px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .div-inf-profissional-principal h1{
@@ -26,12 +27,22 @@
     
 }
 
+.div-inf-profissional-principal .icon-perfil-profissional{
+    margin-right: 10px;
+}
+
+.div-inf-profissional-principal strong{
+    margin-right: 5px;
+}
+
 .div-inf-profissional-principal h2{
     margin-left: 10px;
 }
 
 .div-inf-profissional-principal p{
     margin-left: 10px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .button-alterar-dados-profissional button{
@@ -46,10 +57,14 @@
     transition: all ease 0.2s;
     cursor: pointer;
     margin-right: 20px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .button-alterar-dados-profissional button:hover{
     background: #246b63;
+    width: 160px;
+    height: 60px;
+    font-size: 16px;
 }
 
 .buttons-profissional{
@@ -58,7 +73,7 @@
     align-content: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 300px;
+    margin-bottom: 50px;
 }
 
 .button-adiciona-dados-profissional button{
@@ -73,18 +88,21 @@
     transition: all ease 0.2s;
     cursor: pointer;
     margin-left: 20px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .button-adiciona-dados-profissional button:hover{
     background: #246b63;
+    width: 160px;
+    height: 60px;
+    font-size: 16px;
 }
 
 .div-dados-worker{
-    border: 3px solid;
+    border: 3px solid #3AB0A2;
     background-color: #3AB0A2;
     border-radius: 20px;
     margin: 40px;
-    width: 50%;
     margin-left: auto;
     margin-right: auto;
     color: #fff;
@@ -92,6 +110,7 @@
     width: auto;
     margin-right: 200px;
     margin-left: 200px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .div-dados-worker h1{
@@ -104,6 +123,16 @@
 
 .div-dados-worker p{
     margin-left: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.div-dados-worker .icon-perfil-profissional{
+    margin-right: 10px;
+}
+
+.div-dados-worker strong{
+    margin-right: 5px;
 }
 
 .link-button-adiciona-perfil-prof{

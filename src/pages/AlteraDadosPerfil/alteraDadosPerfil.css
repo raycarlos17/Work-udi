@@ -6,16 +6,22 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
+    box-shadow: 7px 7px 7px #999;
 }
 
 .div-alterar-perfil h1{
     color: #fff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .div-alterar-perfil label{
     color: #fff;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -15px;
 }
 
 .div-alterar-perfil form{
@@ -29,9 +35,54 @@
     width: 100%;
     margin-top: 0;
     margin-bottom: 20px;
+    border: none;
+    font-size: 18px;
 }
 
 .input-radio-alterar{
     width: 20px;
-    margin-left: 50px
+    margin-left: 50px;
 }
+
+.div-button-altera-perfil{
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-button-altera-perfil button{
+    background: #fff;
+    border: none;
+    margin: 20px;
+    color: #3AB0A2;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: ease all 0.2s;
+}
+
+.div-button-altera-perfil button:hover {
+    background: #ccc;
+}
+
+.link-button-perfil{
+    text-decoration: none;
+    color: #3AB0A2;
+}
+
+.icon-altera-perfil{
+    margin-right: 5px;
+}
+
+.select-dados-perfil{
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 130px;
+    height: 30px;
+    border: none;
+}
+
