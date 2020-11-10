@@ -5,8 +5,6 @@ import NavBar from '../../components/navbar'
 import Footer from '../../components/footerRaphael'
 import jiraya from '../../assets/img/jiraya.jpg'
 import CardTrabalhos from '../../components/cardTrabalhosRaphael';
-import 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css'
-
 
 const HomeProfissionalRaphael = (props) => {
 

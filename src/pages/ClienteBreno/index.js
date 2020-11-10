@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-import 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css'
 
 import Header from '../../components/navbarBreno'
 import Footer from '../../components/footerBreno'
