@@ -12,25 +12,35 @@ import InfoIcon from '@material-ui/icons/Info';
 
 const Workers = (props) => {
 
-    const [listWorkers, setListWorkers] = useState([])
+    const [worker, setWorker] = useState([])
 
     useEffect(() => {
+        dadosUser()
+    }, [])
+
+    async function dadosUser(){
 
         const id = props.match.params.id
 
         try {
-            fetch(`http://localhost:3001/workers/${id}`)
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListWorkers(result);
-                    })
-        }
-        catch (error) {
-            console.error(error)
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+            let retorno = await fetch(`http://localhost:5000/workers/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            console.log(json)
+            setWorker(json)
+            console.log(worker)
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
 
     return (
         <div>
@@ -39,19 +49,19 @@ const Workers = (props) => {
             </Header>
             <div className='div-workers'>
                 <h4>Contact Information <InfoIcon className='icon-workers-info'/></h4>
-                <p><PersonIcon className='icon-workers'/><strong>Name: </strong>{listWorkers.name}</p>
+                <p><PersonIcon className='icon-workers'/><strong>Name: </strong>{worker.name}</p>
                 <br />
                 <hr/>
-                <p><EmailIcon className='icon-workers'/><strong>Email: </strong>{listWorkers.email}</p>
+                <p><EmailIcon className='icon-workers'/><strong>Email: </strong>{worker.email}</p>
                 <br />
                 <hr/>
-                <p><BuildIcon className='icon-workers'/><strong>Ocupation: </strong>{listWorkers.occupation}</p>
+                <p><BuildIcon className='icon-workers'/><strong>Ocupation: </strong>{worker.occupation}</p>
                 <br />
                 <hr/>
-                <p><PhoneIcon className='icon-workers'/><strong>Contact: </strong>{listWorkers.contact}</p>
+                <p><PhoneIcon className='icon-workers'/><strong>Contact: </strong>{worker.contact}</p>
                 <br />
                 <hr/>
-                <p><DescriptionIcon className='icon-workers'/><strong>Description: </strong>{listWorkers.description}</p>
+                <p><DescriptionIcon className='icon-workers'/><strong>Description: </strong>{worker.description}</p>
             </div>
             <Footer/>
         </div>

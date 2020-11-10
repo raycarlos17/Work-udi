@@ -11,6 +11,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import PeopleIcon from '@material-ui/icons/People';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
+// import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+// import CancelIcon from '@material-ui/icons/Cancel';
+// import ReportProblemIcon from '@material-ui/icons/ReportProblem'
 
 const Register = (props) => {
 
@@ -20,27 +23,10 @@ const Register = (props) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [perfil, setPerfil] = useState('cliente')
-    const [listUsers, setListUsers] = useState([])
-
-    useEffect(() => {
-        try {
-            fetch('http://localhost:3001/users')
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListUsers(result);
-                    })
-        }
-        catch (error) {
-            console.error(error)
-        }
-    }, [])
 
     async function registerUserBack() {
-        let list = await listUsers
-        let id = await list.length + 1
         try {
-            let retorno = await fetch('http://localhost:3001/users', {
+            let retorno = await fetch('http://localhost:5000/users/cadastro', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -48,7 +34,6 @@ const Register = (props) => {
                     'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({
-                    "id": id,
                     "name": name,
                     "email": email,
                     "cpf": cpf,
@@ -56,11 +41,33 @@ const Register = (props) => {
                     "perfil": perfil
                 })
             })
-
             let json = await retorno.json()
-            alert('Registrado com sucesso')
-            clearForms()
-            routeChange()
+            console.log(json)
+            if (json.respostaCadastro === 'sucesso') {
+                alert(json.Message)
+                clearForms()
+                routeChange()
+                return;
+            }
+            else if(json.respostaCadastro === 'camposVazios'){
+                alert(json.Message)
+                return;
+            }
+            else if(json.respostaCadastro === 'cpfInvalido'){
+                alert(json.Message)
+                setCpf('')
+                return;
+            }
+            else if(json.respostaCadastro === 'emailCadastrado'){
+                alert(json.Message)
+                setEmail('')
+                return;
+            }
+            else if(json.respostaCadastro === 'cpfCadastrado'){
+                alert(json.Message)
+                setCpf('')
+                return;
+            }
             return json
 
         } catch (error) {
@@ -70,45 +77,20 @@ const Register = (props) => {
         }
     }
 
-    function handleClick(e) {
-        e.preventDefault()
-        confirmRegister(email)
+    function comparaPassword(){
+        if(password === confirmPassword){
+            registerUserBack()
+        }
+        else{
+            alert("Sua senha não confere com a validação")
+            setPassword('')
+            setConfirmPassword('')
+        }
     }
 
-    function confirmRegister(email) {
-
-        let emailConfirmed = true
-        let cpfConfirmed = true
-
-        listUsers.map(users => {
-
-            if (email === users.email) {
-                alert('Email ja registrado em sistema')
-                setEmail('')
-                return emailConfirmed = false
-            }
-
-            if(cpf === users.cpf) {
-                alert('CPF ja registrado em sistema')
-                setCpf('')
-                return cpfConfirmed = false
-            }
-            return emailConfirmed;
-        })
-        if (email === '' || name === '' || password === '' || perfil === '' || cpf === '') {
-            return alert('Preencher todos os campos para fazer o cadastro')
-        }
-
-        if (emailConfirmed === true && cpfConfirmed === true) {
-            if (password === confirmPassword) {
-                return registerUserBack().then(resultado => (JSON.stringify(resultado)))
-            } else {
-                alert('Password invalido, digite novamente')
-                setPassword('')
-                setConfirmPassword('')
-            }
-        }
-
+    function handleClick(e) {
+        e.preventDefault()
+        comparaPassword()
     }
 
     function clearForms() {
@@ -175,13 +157,13 @@ const Register = (props) => {
                     <br />
                     <PeopleIcon className='icon-input' style={{ color: '#3AB0A2' }} />
                     <select className='select-login' onChange={e => setPerfil(e.target.value)}>
-                    <optgroup label="Profile">
-                        <option value='cliente'  >Client</option>
-                        <option value='profissional' >Professional</option>
+                        <optgroup label="Profile">
+                            <option value='cliente'  >Client</option>
+                            <option value='profissional' >Professional</option>
                         </optgroup>
                     </select>
 
-                    <br/>
+                    <br />
                     <div className='div-button-right'>
                         <button type="submit" onClick={handleClick}>
                             SIGN UP
@@ -196,36 +178,14 @@ const Register = (props) => {
 
 export default Register;
 
-// function registerUserBack() {
-//     let list = listUsers
-//     let id = list.length + 1
-//     try {
-//         let retorno = fetch('http://localhost:5000/users/cadastro', {
-//             method: 'POST',
-//             headers: {
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json',
-//                 'Access-Control-Allow-Origin': '*'
-//             },
-//             body: JSON.stringify({
-//                // "_id": id,
-//                 "name": name,
-//                 "email": email,
-//                 "cpf": cpf,
-//                 "password": password,
-//                 "perfil": perfil
-//             })
-//         })
-
-//         let json = retorno.json()
-//         alert('Registrado com sucesso')
-//         clearForms()
-//         routeChange()
-//         return json
-
-//     } catch (error) {
-//         alert('Erro ao fazer o registro')
-//         clearForms()
-//         console.log(error)
-//     }
-// }
+// import passwordValidator from 'password-validator';
+//  var schema = new passwordValidator();
+//     schema
+//     .is().min(8)                                    // Minimum length 8
+//     .is().max(100)                                  // Maximum length 100
+//     .has().uppercase()                              // Must have uppercase letters
+//     .has().lowercase()                              // Must have lowercase letters
+//     .has().digits(2)                                // Must have at least 2 digits
+//     .has().not().spaces()                           // Should not have spaces
+//     .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
+//     return schema.validate(senha)

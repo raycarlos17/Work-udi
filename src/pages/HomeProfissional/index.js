@@ -15,65 +15,51 @@ import DescriptionIcon from '@material-ui/icons/Description';
 const HomeProfissional = (props) => {
 
     //const user = localStorage.getItem('user')
-    const [listUser, setListUser] = useState([])
-    const [listWorker, setListWorker] = useState([])
+    const [user, setUser] = useState([])
+    const [worker, setWorker] = useState([])
 
     useEffect(() => {
-        function fetchData() {
-            const id = props.match.params.id
-            let user;
-
-            try {
-                fetch(`http://localhost:3001/users/${id}`)
-                    .then(async response => response.json())
-                    .then(
-                        async (result) => {
-                            setListUser(result);
-                            user = result
-                            try {
-                                fetch(`http://localhost:3001/workers`)
-                                    .then(async response => response.json())
-                                    .then(
-                                        async (result) => {
-                                            result.map(async worker => {
-                                                if (user.email === worker.emailLogin) {
-                                                    setListWorker(worker)
-                                                }
-                                                else {
-                                                    setListWorker(false)
-                                                }
-                                            })
-
-                                        }
-                                    )
-
-                            }
-                            catch (error) {
-                                console.log(error)
-                            }
-                        })
-            }
-            catch (error) {
-                console.error(error)
-            }
-        }
-        fetchData()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        dadosUser()
     }, [])
+
+    const id = props.match.params.id
+
+    async function dadosUser(){
+
+        try {
+            let retorno = await fetch(`http://localhost:5000/users/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            console.log(json)
+            setUser(json)
+            console.log(user)
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
     function divWorker() {
-        if (listWorker !== false) {
+        if (worker !== false) {
             return (
                 <div className='div-dados-worker'>
                     <h1>Professional Data</h1>
-                    <p><PersonIcon className='icon-perfil-profissional' /><strong>Name professional: </strong>{listWorker.name}</p>
+                    <p><PersonIcon className='icon-perfil-profissional' /><strong>Name professional: </strong>{worker.name}</p>
                     <hr />
-                    <p><EmailIcon className='icon-perfil-profissional' /><strong>Email professional: </strong>{listWorker.email}</p>
+                    <p><EmailIcon className='icon-perfil-profissional' /><strong>Email professional: </strong>{worker.email}</p>
                     <hr />
-                    <p><BuildIcon className='icon-perfil-profissional' /><strong>Occupation: </strong>{listWorker.occupation}</p>
+                    <p><BuildIcon className='icon-perfil-profissional' /><strong>Occupation: </strong>{worker.occupation}</p>
                     <hr />
-                    <p><PhoneIcon className='icon-perfil-profissional' /><strong>Contact: </strong>{listWorker.contact}</p>
+                    <p><PhoneIcon className='icon-perfil-profissional' /><strong>Contact: </strong>{worker.contact}</p>
                     <hr />
-                    <p><DescriptionIcon className='icon-perfil-profissional' /><strong>Description: </strong>{listWorker.description}</p>
+                    <p><DescriptionIcon className='icon-perfil-profissional' /><strong>Description: </strong>{worker.description}</p>
                 </div>
             )
         }
@@ -88,24 +74,24 @@ const HomeProfissional = (props) => {
                 </div>
             </Header>
             <div className='div-inf-profissional-principal'>
-                <h1>Welcome to {listUser.name}</h1>
+                <h1>Welcome to {user.name}</h1>
                 <h2>Profile data</h2>
                 <hr />
-                <p><PersonIcon className='icon-perfil-profissional' /><strong>Name: </strong>{listUser.name}</p>
+                <p><PersonIcon className='icon-perfil-profissional' /><strong>Name: </strong>{user.name}</p>
                 <hr />
-                <p><EmailIcon className='icon-perfil-profissional' /><strong>Email: </strong>{listUser.email}</p>
+                <p><EmailIcon className='icon-perfil-profissional' /><strong>Email: </strong>{user.email}</p>
                 <hr />
-                <p><RecentActorsIcon className='icon-perfil-profissional' /><strong>CPF: </strong>{listUser.cpf}</p>
+                <p><RecentActorsIcon className='icon-perfil-profissional' /><strong>CPF: </strong>{user.cpf}</p>
                 <hr />
-                <p><PeopleIcon className='icon-perfil-profissional' /><strong>Profile: </strong>{listUser.perfil}</p>
+                <p><PeopleIcon className='icon-perfil-profissional' /><strong>Profile: </strong>{user.perfil}</p>
             </div>
             {divWorker()}
             <div className='buttons-profissional'>
                 <div className='button-alterar-dados-profissional'>
-                    <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
+                    <button><Link to={`/alterar/perfil/${id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
                 </div>
                 <div className='button-adiciona-dados-profissional'>
-                    <button><Link to={`/register/perfil/profissional/${listUser.id}`} className='link-button-adiciona-perfil-prof'>PROFESSIONAL DATA</Link></button>
+                    <button><Link to={`/register/perfil/profissional/${id}`} className='link-button-adiciona-perfil-prof'>PROFESSIONAL DATA</Link></button>
                 </div>
             </div>
             <Footer />

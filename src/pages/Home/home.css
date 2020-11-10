@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
 
 .div-imagem{
-    background-image: url('../../img/img-home.png');
+    background-image: url('../../img/img-home1.png');
     width: 100%;
     height: 416px ;
 }
@@ -73,5 +73,3 @@
     color: #ffffff;
     font-weight: bold;
 }
-
-

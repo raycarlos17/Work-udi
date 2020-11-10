@@ -1,0 +1,32 @@
+.ContentCustom{
+    background-color: #E1E1E1;
+}
+.textpCustom{
+    line-height: 17px;
+    width: 80%;
+    margin: auto;
+    font-size: 16px;
+    text-align: left;
+    height: 110px;
+    overflow: auto;
+}
+.textpCustom2{
+    margin: auto;
+    font-size: 18px;
+    font-weight: 900;
+    width: 80%;
+    margin: auto;
+}
+.btnCustom{
+    background-color: #616161;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 70px;
+    color: #C2C2C2;
+    font-size: 22px;
+    transition: ease-in-out .1s;
+}
+.btnCustom:hover{
+    color: white;
+}

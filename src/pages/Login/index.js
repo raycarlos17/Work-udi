@@ -12,77 +12,73 @@ const Login = (props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [listUsers, setListUsers] = useState([])
 
-    useEffect(() => {
+    let perfil
+    let id
+
+    async function loginUser() {
+
         try {
-            fetch('http://localhost:3001/users')
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListUsers(result);
-                    })
-        }
-        catch (error) {
-            console.error(error)
-        }
-    }, [])
+            let retorno = await fetch('http://localhost:5000/users/login', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: JSON.stringify({
+                    "email": email,
+                    "password": password,
+                })
+            })
+            let json = await retorno.json()
+            if (json.respostaLogin === 'sucesso') {
 
-    //     useEffect(() => {
-    //         testBackend()
-    //     }, [])
-    //    async function testBackend() {
-    //         try{
-    //             let response = await fetch('http://localhost:5000/rotaTeste', {   
-    //                 method: 'GET',
-    //                 headers: {
-    //                     'Accept': 'application/json',
-    //                     'Content-type': 'application/json',
-    //                     'Access-Control-Allow-Origin': '*'
-    //                 }
-    //             })
-    //             console.log(response)
-    //             // let json = response.json;
-    //             // console.log(json)
-    //             // return json
-    //             return response
-    //         } catch(error) {
-    //             console.error(error)
-    //         }
-    //     }
+                localStorage.setItem('token', json.token)
+                perfil = json.perfil
+                id = json.id
 
-    function confirmLogin() {
-        let user
-        listUsers.map(list => {
-
-            if (email === list.email) {
-                user = list
+                routeChange()
+                return;
             }
-            return true
-        })
-        if (password === '' && email === '') {
-            alert('Preencher email e senha para logar')
-        }
-        else if (user === undefined) {
-            alert('Email não encontrado')
-            setEmail('')
-            setPassword('')
-        } else if (password === user.password) {
-            alert('Logado com sucesso')
-            localStorage.setItem('user', user.name)
-            routeChange(user.perfil, user.id)
-        } else if (password !== user.password) {
-            alert('Password invalido')
-            setPassword('')
-        }
+            else if(json.respostaLogin === 'invalida'){
+                alert(json.Message)
+                setPassword('')
+                return;
+            }
+            else if(json.respostaLogin === 'naoEncontrado'){
+                alert(json.Message)
+                clearForms()
+                return
+            }
+            else if(json.respostaLogin === 'error'){
+                alert(json.Message)
+                return
+            }
+            return json
 
+        } catch (error) {
+            alert('Erro ao fazer login')
+            clearForms()
+            console.log(error)
+        }
     }
 
     const history = useHistory()
 
-    const routeChange = (perfil, id) => {
+    const routeChange = () => {
         let path = '/'.concat(`${perfil}/${id}`);
         history.push(path)
+    }
+
+    function clearForms(){
+        setEmail('')
+        setPassword('')
+    }
+
+    function handleClick(e) {
+        e.preventDefault()
+        loginUser()
     }
 
     return (
@@ -125,7 +121,7 @@ const Login = (props) => {
                     <div><img src={imgLinkedin} alt='Linkedin'></img></div>
                 </div>
                 <div className='div-button-right'>
-                    <button type='submit' onClick={confirmLogin}>
+                    <button type='submit' onClick={handleClick}>
                         LOG IN
                     </button>
                 </div>

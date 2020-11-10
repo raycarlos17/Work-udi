@@ -111,6 +111,22 @@
       "cpf": "74174174174",
       "password": "123456",
       "perfil": "profissional"
+    },
+    {
+      "id": 15,
+      "name": "fulano123",
+      "email": "fulano123@gmail.com",
+      "cpf": "12345698753",
+      "password": "123456",
+      "perfil": "profissional"
+    },
+    {
+      "id": 16,
+      "name": "fulanoteste",
+      "email": "fulano@gmail.com",
+      "cpf": "12332112332",
+      "password": "123456",
+      "perfil": "profissional"
     }
   ],
   "workers": [
@@ -183,12 +199,20 @@
     },
     {
       "id": 1,
-      "name": "Ray Ferragista",
-      "email": "ray_ferragista@gmail.com",
+      "name": "Ray Carlos",
+      "email": "raycarlos@gmail.com",
       "emailLogin": "raycarlos@gmail.com",
-      "occupation": "Ferragista",
-      "contact": "34987532587",
-      "description": "Ferragista a 8 anos...."
+      "occupation": "Pintor",
+      "contact": "34963214569"
+    },
+    {
+      "id": 16,
+      "name": "Fulano alterado",
+      "email": "fulano_mecanico@gmail.com",
+      "emailLogin": "fulano@gmail.com",
+      "occupation": "Mecanico",
+      "contact": "34988774433",
+      "description": "Mecanico a 5 anos..."
     }
   ]
 }

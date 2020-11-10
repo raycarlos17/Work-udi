@@ -12,25 +12,33 @@ import PeopleIcon from '@material-ui/icons/People';
 const HomeCliente = (props) => {
 
     //const user = localStorage.getItem('user')
-    const [listUser, setListUser] = useState([])
+    const [User, setUser] = useState([])
 
     useEffect(() => {
+        dadosUser()
+    }, [])
+
+    async function dadosUser(){
 
         const id = props.match.params.id
 
         try {
-            fetch(`http://localhost:3001/users/${id}`)
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListUser(result);
-                    })
-        }
-        catch (error) {
-            console.error(error)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+            let retorno = await fetch(`http://localhost:5000/users/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            setUser(json)
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
 
     return (
         <div>
@@ -41,19 +49,19 @@ const HomeCliente = (props) => {
             </Header>
 
             <div className='div-inf-client-principal'>
-                <h1>Welcome to {listUser.name}</h1>
+                <h1>Welcome to {User.name}</h1>
                 <h2>Profile data</h2>
                 <hr />
-                <p><PersonIcon className='icon-perfil-cliente'/><strong>Name: </strong>{listUser.name}</p>
+                <p><PersonIcon className='icon-perfil-cliente'/><strong>Name: </strong>{User.name}</p>
                 <hr />
-                <p><EmailIcon className='icon-perfil-cliente'/><strong>Email: </strong>{listUser.email}</p>
+                <p><EmailIcon className='icon-perfil-cliente'/><strong>Email: </strong>{User.email}</p>
                 <hr />
-                <p><RecentActorsIcon className='icon-perfil-cliente'/><strong>CPF: </strong>{listUser.cpf}</p>
+                <p><RecentActorsIcon className='icon-perfil-cliente'/><strong>CPF: </strong>{User.cpf}</p>
                 <hr />
-                <p><PeopleIcon className='icon-perfil-cliente'/><strong>Profile: </strong>{listUser.perfil}</p>
+                <p><PeopleIcon className='icon-perfil-cliente'/><strong>Profile: </strong>{User.perfil}</p>
             </div>
             <div className='button-alterar-dados-client'>
-                <button><Link to={`/alterar/perfil/${listUser.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
+                <button><Link to={`/alterar/perfil/${User.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
             </div>
 
             <Footer />

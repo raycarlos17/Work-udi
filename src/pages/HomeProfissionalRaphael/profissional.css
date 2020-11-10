@@ -1,0 +1,111 @@
+
+.box-header {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: #414141;
+    height: 60px;
+    display: flex;
+}
+
+.logo{
+    margin: 15px 0px 0px 40px;
+    color: white;
+}
+
+.pesquisa{
+    margin: 15px 0px 0px 800px;
+    color: white;
+}
+
+.logout{
+    margin: 15px 0px 0px 400px;
+    color: white;
+}
+
+
+
+.fundo-body{
+    background-color: #ECECEC;
+    height: 1000px;
+    margin: 0px 80px;
+    display: flex;
+}
+
+.primeira-box{
+    /* background-color: red; */
+    height: 550px;
+    width: 100%;
+}
+
+.nome-profissional{
+    /* background-color: white; */
+    width: 500px;
+    text-align: center;
+    margin:100px 0px 0px 260px
+}
+
+
+.profissoes-profissional{
+    /* background-color: white; */
+    width: 500px;
+    text-align: center;
+    margin:10px 0px 0px 260px
+}
+
+.foto{
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    right: 0;
+    float: right;
+    margin-right:80px;
+    margin-top: -30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.sobre{
+    background-color: white;
+    margin: 70px 80px;
+    height: 160px;
+    width: 850px;
+    border-radius: 15px;
+}
+
+.info-sobre{
+    /* background-color: pink; */
+    height: 125px;
+    width: 850px;
+    border-radius: 0px 0px 15px 15px;
+    margin-top: 10px;
+}
+
+
+
+.segunda-box{
+    height: 450px;
+    width: 100%;
+    background-color: red;
+}
+
+.segunda-box-central{
+    background-color: white;
+    height: 450px;
+    width: 850px;
+    margin-left: 80px;
+    
+}
+
+.trabalhos{
+    background-color: pink;
+    width: 100px; 
+}
+
+.descricao-box-one{
+    background-color: wheat;
+    margin: 60px 20px;
+    height: 300px;
+    width: 350px;
+    border-radius: 15px;
+} 

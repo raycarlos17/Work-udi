@@ -20,18 +20,29 @@ const Destaques = () => {
     })
 
     useEffect(() => {
-        try {
-            fetch('http://localhost:3001/workers')
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        setListWorkers(result);
-                    })
-        }
-        catch (error) {
-            console.error(error)
-        }
+        dadosWorkers()
     }, [])
+
+    async function dadosWorkers(){
+        try {
+            let retorno = await fetch(`http://localhost:5000/workers`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            setListWorkers(json.workers)
+            return json
+    }
+    catch(error) {
+        console.log(error);
+        return;
+    }
+}
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
