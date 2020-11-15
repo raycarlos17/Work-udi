@@ -115,7 +115,7 @@ const Register = (props) => {
                 <div>
                     <button className='button-home'>
                         <Link to='/'>
-                            <HomeIcon style={{ color: '#fff' }} />
+                            <HomeIcon style={{ color: '#000' }} />
                         </Link>
                     </button>
                 </div>
@@ -140,22 +140,22 @@ const Register = (props) => {
                 <br />
                 <p>Fill in the data to make your registration</p>
                 <form className='form-register-user'>
-                    <PersonIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <PersonIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={name} type='text' placeholder='Name' onChange={e => setName(e.target.value)} required />
                     <br />
-                    <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <EmailIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} required multiple />
                     <br />
-                    <RecentActorsIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <RecentActorsIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={cpf} type='text' placeholder='CPF' onChange={e => setCpf(e.target.value)} required multiple />
                     <br />
-                    <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <LockIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} required />
                     <br />
-                    <LockOpenIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <LockOpenIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={confirmPassword} type='password' placeholder='Confirm Password' onChange={e => setConfirmPassword(e.target.value)} required />
                     <br />
-                    <PeopleIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <PeopleIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <select className='select-login' onChange={e => setPerfil(e.target.value)}>
                         <optgroup label="Profile">
                             <option value='cliente'  >Client</option>

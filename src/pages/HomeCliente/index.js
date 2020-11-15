@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './homeCliente.css';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footerBreno';
 import ButtonLogOut from '../../components/ButtonLogOut';
 import Header from '../../components/Header';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const HomeCliente = (props) => {
         dadosUser()
     }, [])
 
-    async function dadosUser(){
+    async function dadosUser() {
 
         const id = props.match.params.id
 
@@ -34,11 +34,11 @@ const HomeCliente = (props) => {
 
             let json = await retorno.json()
             setUser(json)
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
-    catch(error) {
-        console.log(error);
-    }
-}
 
     return (
         <div>
@@ -47,23 +47,26 @@ const HomeCliente = (props) => {
                     <ButtonLogOut />
                 </div>
             </Header>
-
             <div className='div-inf-client-principal'>
                 <h1>Welcome to {User.name}</h1>
                 <h2>Profile data</h2>
+                <hr/>
+                <p><PersonIcon className='icon-perfil-cliente' /><strong>Name: </strong>{User.name}</p>
                 <hr />
-                <p><PersonIcon className='icon-perfil-cliente'/><strong>Name: </strong>{User.name}</p>
+                <p><EmailIcon className='icon-perfil-cliente' /><strong>Email: </strong>{User.email}</p>
                 <hr />
-                <p><EmailIcon className='icon-perfil-cliente'/><strong>Email: </strong>{User.email}</p>
+                <p><RecentActorsIcon className='icon-perfil-cliente' /><strong>CPF: </strong>{User.cpf}</p>
                 <hr />
-                <p><RecentActorsIcon className='icon-perfil-cliente'/><strong>CPF: </strong>{User.cpf}</p>
-                <hr />
-                <p><PeopleIcon className='icon-perfil-cliente'/><strong>Profile: </strong>{User.perfil}</p>
+                <p><PeopleIcon className='icon-perfil-cliente' /><strong>Profile: </strong>{User.perfil}</p>
             </div>
-            <div className='button-alterar-dados-client'>
-                <button><Link to={`/alterar/perfil/${User.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
+            <div className='buttons-profissional'>
+                <div className='button-alterar-dados-client'>
+                    <button><Link to={`/alterar/perfil/${User.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
+                </div>
+                <div className='button-list-workers'>
+                    <button><Link to={`/home/cliente`} className='link-button-list-workers'>LIST WORKERS</Link></button>
+                </div>
             </div>
-
             <Footer />
         </div>
     )

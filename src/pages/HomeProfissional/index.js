@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ButtonLogOut from '../../components/ButtonLogOut';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footerBreno';
 import Header from '../../components/Header';
 import { Link } from 'react-router-dom';
 import './homeProfissional.css';

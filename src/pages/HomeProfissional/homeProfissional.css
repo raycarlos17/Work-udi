@@ -3,14 +3,14 @@
 }
 
 .div-inf-profissional-principal{
-    border: 3px solid #3AB0A2;
-    background-color: #3AB0A2;
+    border: 1px solid #c4c400;
+    background-color: #00000080;
     border-radius: 20px;
     margin: 40px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: #000;
     height: auto;
     width: auto;
     margin-right: 200px;
@@ -20,8 +20,8 @@
 
 .div-inf-profissional-principal h1{
     text-align: center;
-    color: #3AB0A2;
-    background-color: #fff;
+    color: #000;
+    background-color: #c4c400;
     margin: 10px;
     border-radius: 10px;
     
@@ -50,8 +50,8 @@
     border-radius: 10px;
     width: 150px;
     height: 50px;
-    background: #3AB0A2;
-    color: #fff;
+    background: #c4c400;
+    color: #000;
     font-weight: bold;
     font-size: 15px;
     transition: all ease 0.2s;
@@ -61,10 +61,7 @@
 }
 
 .button-alterar-dados-profissional button:hover{
-    background: #246b63;
-    width: 160px;
-    height: 60px;
-    font-size: 16px;
+    background: #ffff00;
 }
 
 .buttons-profissional{
@@ -81,8 +78,8 @@
     border-radius: 10px;
     width: 150px;
     height: 50px;
-    background: #3AB0A2;
-    color: #fff;
+    background: #c4c400;
+    color: #000;
     font-weight: bold;
     font-size: 15px;
     transition: all ease 0.2s;
@@ -92,20 +89,17 @@
 }
 
 .button-adiciona-dados-profissional button:hover{
-    background: #246b63;
-    width: 160px;
-    height: 60px;
-    font-size: 16px;
+    background: #ffff00;
 }
 
 .div-dados-worker{
-    border: 3px solid #3AB0A2;
-    background-color: #3AB0A2;
+    border: 1px solid #c4c400;
+    background-color: #00000080;
     border-radius: 20px;
     margin: 40px;
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: #000;
     height: auto;
     width: auto;
     margin-right: 200px;
@@ -115,8 +109,8 @@
 
 .div-dados-worker h1{
     text-align: center;
-    color: #3AB0A2;
-    background-color: #fff;
+    color: #000;
+    background-color: #c4c400;
     margin: 10px;
     border-radius: 10px;
 }
@@ -137,5 +131,5 @@
 
 .link-button-adiciona-perfil-prof{
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }

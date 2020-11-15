@@ -6,7 +6,7 @@
 }
 
 .button-home{
-    background: #3AB0A2;
+    background: #c4c400;
     border: solid 2px #fff;
     border-radius: 5px;
     left: 0;
@@ -17,7 +17,7 @@
 }
 
 .button-home:hover{
-    background: #20635b;
+    background: #c4c400;
     color: #8a8a8a;
 }
 
@@ -27,8 +27,8 @@
     height: 100vh;
     left: 0;
     bottom: 0;
-    background-color: #3AB0A2;
-    color: #ffffff;
+    background-color: #c4c400;
+    color: #000;
     font-size: 30px;
 }
 
@@ -56,8 +56,8 @@
     height: 50px;
     font-size: 20px;
     font-weight: bold;
-    color: #ffffff;
-    background: rgba(58, 176, 162, 0.74);
+    color: #000;
+    background: #c4c400;
     border: 1px solid rgba(255, 255, 255, 0.75);
     box-sizing: border-box;
     border-radius: 50px;
@@ -66,12 +66,12 @@
 }
 
 .div-button button:hover{
-    background-color: rgba(29, 94, 86, 0.39);
+    background-color: #c4c400;
 }
 
 .link-button{
     text-decoration: none;
-    color: #ffffff;
+    color: #000;
     font-weight: bold;
 }
 
@@ -79,7 +79,7 @@
     width: auto;
     padding: 0;
     margin-top: 160px;
-    color: #3AB0A2;
+    color: #c4c400;
     font-size: 50px;
     font-weight: bold;
 }
@@ -97,12 +97,12 @@
 }
 
 .div-right p {
-    color: #A9A9A9;
+    color: #fff;
 }
 
 .icon-name{
 
-    color: #D2D2D2;
+    color: #fff;
     padding-right: 10px;
 }
 
@@ -123,7 +123,7 @@ input{
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;
-    background: #3AB0A2;
+    background: #c4c400;
     width: 230px;
     height: 35px;
     border: none 0 ;
@@ -133,13 +133,7 @@ input{
 }
 
 .div-button-right button:hover{
-    background-color: rgba(29, 94, 87, 0.993);
-}
-
-.icon-input{
-    margin-top: 30px;
-    padding-right: 10px;
-    margin-bottom: -6px;
+    color: #000;
 }
 
 .link-login-home{

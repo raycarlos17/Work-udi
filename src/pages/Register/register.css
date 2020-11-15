@@ -11,14 +11,14 @@
     height: 100vh;
     left: 0;
     bottom: 0;
-    background-color: #3AB0A2;
-    color: #ffffff;
+    background-color: #c4c400;
+    color: #000;
     font-size: 30px;
 }
 
 .button-home{
-    background: #3AB0A2;
-    border: solid 2px #fff;
+    background: #c4c400;
+    border: solid 2px #000;
     border-radius: 5px;
     left: 0;
     position: absolute;
@@ -28,11 +28,12 @@
 }
 
 .button-home:hover{
-    background: #20635b;
-    color: #cccccc;
+    background: #c4c400;
+    color: #000;
 }
 
 .div-right{
+    background-color: #333;
     position: relative;
     width: 50%;
     height: 100vh;
@@ -56,9 +57,9 @@
     height: 50px;
     font-size: 20px;
     font-weight: bold;
-    color: #ffffff;
-    background: rgba(58, 176, 162, 0.74);
-    border: 3px solid rgba(255, 255, 255, 0.75);
+    color: #000;
+    background: #c4c400;
+    border: 3px solid #000;
     box-sizing: border-box;
     border-radius: 50px;
     cursor: pointer;
@@ -67,12 +68,12 @@
 }
 
 .div-button button:hover{
-    background-color: rgba(29, 94, 86, 0.39);
+    background-color: #ffff00;
 }
 
 .link-button{
     text-decoration: none;
-    color: #ffffff;
+    color: #000;
     font-weight: bold;
 }
 
@@ -80,7 +81,7 @@
     width: auto;
     padding: 0;
     margin-top: 80px;
-    color: #3AB0A2;
+    color: #c4c400;
     font-size: 50px;
     font-weight: bold;
 }
@@ -97,12 +98,12 @@
 }
 
 .div-right p {
-    color: #A9A9A9;
+    color: #fff;
 }
 
 .icon-name{
 
-    color: #D2D2D2;
+    color: #000;
     padding-right: 10px;
 }
 
@@ -112,7 +113,8 @@ input{
     padding-top: 10px;
     margin-top: 25px;
     border: 0 none;
-    border-bottom: 2px solid #D2D2D2 ;
+    border-radius: 5px;
+    border-bottom: 2px solid #000 ;
 }
 
 .div-button-right{
@@ -122,25 +124,19 @@ input{
 .div-button-right button{
     font-size: 18px;
     font-weight: bold;
-    color: #ffffff;
-    background: #3AB0A2;
+    color: #000;
+    background: #c4c400;
     width: 230px;
     height: 35px;
     border: none 0 ;
     border-radius: 10px;
     cursor: pointer;
     transition: all ease 0.3s;
-    box-shadow: 7px 7px 7px #999;
+    box-shadow: 7px 7px 7px #000;
 }
 
 .div-button-right button:hover{
-    background-color: rgba(29, 94, 87, 0.993);
-}
-
-.icon-input{
-    margin-top: 30px;
-    padding-right: 10px;
-    margin-bottom: -6px;
+    color: #fff;
 }
 
 .input-radio{
@@ -153,14 +149,14 @@ input{
     align-items: center;
     text-align: center;
     margin-right: 20px;
-    color: #A9A9A9;;
+    color: #000;;
 }
 
 .form-register-user .select-login{
     width: 400px;
     margin-top: 25px;
     border: 0 none;
-    border-bottom: 2px solid #D2D2D2 ;
+    border-bottom: 2px solid #000 ;
 }
 
 

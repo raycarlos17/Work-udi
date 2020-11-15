@@ -3,7 +3,7 @@ import './registrarPerfilProfissional.css';
 import Header from '../../components/Header';
 import ButtonLogOut from '../../components/ButtonLogOut';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footerBreno';
 import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
 import BuildIcon from '@material-ui/icons/Build';

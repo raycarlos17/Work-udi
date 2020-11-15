@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './profissional.css';
-import SearchIcon from '@material-ui/icons/Search';
 import NavBar from '../../components/navbar'
 import Footer from '../../components/footerRaphael'
 import jiraya from '../../assets/img/jiraya.jpg'
 import CardTrabalhos from '../../components/cardTrabalhosRaphael';
 
 const HomeProfissionalRaphael = (props) => {
+
+    const [listWorkers, setListWorkers] = useState([])
+
+    useEffect(() => {
+        dadosWorkers()
+    }, [])
+
+    async function dadosWorkers(){
+        try {
+            let retorno = await fetch(`http://localhost:5000/workers`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            console.log(json)
+            setListWorkers(json.workers)
+            return json
+    }
+    catch(error) {
+        console.log(error);
+        return;
+    }
+}
 
     return (
         <div>

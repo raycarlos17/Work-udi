@@ -1,5 +1,5 @@
 .div-alterar-perfil{
-    background-color: #3AB0A2;
+    background-color: #00000080;
     border-radius: 20px;
     width: 60%;
     height: auto;
@@ -11,14 +11,14 @@
 }
 
 .div-alterar-perfil h1{
-    color: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
     padding-top: 10px;
 }
 
 .div-alterar-perfil label{
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: flex-end;
     margin-bottom: -15px;
@@ -53,25 +53,25 @@
 }
 
 .div-button-altera-perfil button{
-    background: #fff;
+    background: #c4c400;
     border: none;
     margin: 20px;
-    color: #3AB0A2;
+    color: #000;
     border-radius: 10px;
-    width: 90px;
-    height: 30px;
+    width: auto;
+    height: auto;
     cursor: pointer;
     font-weight: bold;
     transition: ease all 0.2s;
 }
 
 .div-button-altera-perfil button:hover {
-    background: #ccc;
+    background: #ffff01;
 }
 
 .link-button-perfil{
     text-decoration: none;
-    color: #3AB0A2;
+    color: #000;
 }
 
 .icon-altera-perfil{

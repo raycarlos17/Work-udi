@@ -1,5 +1,5 @@
 .div-register-perfil-prof-principal {
-    background-color: #3AB0A2;
+    background-color: #00000080;
     border-radius: 20px;
     width: 60%;
     height: auto;
@@ -11,14 +11,14 @@
 }
 
 .div-register-perfil-prof-principal h1 {
-    color: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
     padding-top: 10px;
 }
 
 .div-register-perfil-prof-principal label {
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: flex-end;
     margin-bottom: -15px;
@@ -48,10 +48,10 @@
 }
 
 .div-button-registrar-profissional button {
-    background: #fff;
+    background: #c4c400;
     border: none;
     margin: 20px;
-    color: #3AB0A2;
+    color: #000;
     border-radius: 10px;
     width: 90px;
     height: 30px;
@@ -60,12 +60,12 @@
 }
 
 .div-button-registrar-profissional button:hover {
-    background: #ccc;
+    background: #ffff00;
 }
 
 .link-button-perfil {
     text-decoration: none;
-    color: #3AB0A2;
+    color: #000;
 }
 
 .icon-register-perfil-prof {

@@ -36,6 +36,7 @@ const Destaques = () => {
 
             let json = await retorno.json()
             setListWorkers(json.workers)
+            console.log(listWorkers)
             return json
     }
     catch(error) {

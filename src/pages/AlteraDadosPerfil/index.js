@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './alteraDadosPerfil.css';
 import Header from '../../components/Header';
 import ButtonLogOut from '../../components/ButtonLogOut';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footerBreno';
 import { Link } from 'react-router-dom';
 import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';

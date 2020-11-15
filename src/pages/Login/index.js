@@ -87,7 +87,7 @@ const Login = (props) => {
                 <div>
                     <button className='button-home'>
                         <Link to='/'>
-                            <HomeIcon style={{ color: '#fff' }} />
+                            <HomeIcon style={{ color: '#000' }} />
                         </Link>
                     </button>
                 </div>
@@ -107,10 +107,10 @@ const Login = (props) => {
                 <br />
                 <br />
                 <form>
-                    <EmailIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <EmailIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} />
                     <br />
-                    <LockIcon className='icon-input' style={{ color: '#3AB0A2' }} />
+                    <LockIcon className='icon-input' style={{ color: '#c4c400' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
                     <br />
                 </form>
