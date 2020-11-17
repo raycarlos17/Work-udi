@@ -7,6 +7,7 @@ import imgLinkedin from '../../img/linkedin.svg'
 import HomeIcon from '@material-ui/icons/Home';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
+import moment from 'moment';
 
 const Login = (props) => {
 
@@ -107,10 +108,10 @@ const Login = (props) => {
                 <br />
                 <br />
                 <form>
-                    <EmailIcon className='icon-input' style={{ color: '#c4c400' }} />
+                    <EmailIcon className='icon-input' style={{ color: '#FECB01' }} />
                     <input value={email} type='text' placeholder='Email' onChange={e => setEmail(e.target.value)} />
                     <br />
-                    <LockIcon className='icon-input' style={{ color: '#c4c400' }} />
+                    <LockIcon className='icon-input' style={{ color: '#FECB01' }} />
                     <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} />
                     <br />
                 </form>

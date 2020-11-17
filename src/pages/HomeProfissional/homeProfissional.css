@@ -3,7 +3,7 @@
 }
 
 .div-inf-profissional-principal{
-    border: 1px solid #c4c400;
+    border: 1px solid #FECB01;
     background-color: #00000080;
     border-radius: 20px;
     margin: 40px;
@@ -21,7 +21,7 @@
 .div-inf-profissional-principal h1{
     text-align: center;
     color: #000;
-    background-color: #c4c400;
+    background-color: #FECB01;
     margin: 10px;
     border-radius: 10px;
     
@@ -50,7 +50,7 @@
     border-radius: 10px;
     width: 150px;
     height: 50px;
-    background: #c4c400;
+    background: #FECB01;
     color: #000;
     font-weight: bold;
     font-size: 15px;
@@ -61,7 +61,8 @@
 }
 
 .button-alterar-dados-profissional button:hover{
-    background: #ffff00;
+    background: #cca300;
+    color: #000;
 }
 
 .buttons-profissional{
@@ -78,7 +79,7 @@
     border-radius: 10px;
     width: 150px;
     height: 50px;
-    background: #c4c400;
+    background: #FECB01;
     color: #000;
     font-weight: bold;
     font-size: 15px;
@@ -89,11 +90,12 @@
 }
 
 .button-adiciona-dados-profissional button:hover{
-    background: #ffff00;
+    background: #cca300;
+    color: #000;
 }
 
 .div-dados-worker{
-    border: 1px solid #c4c400;
+    border: 1px solid #FECB01;
     background-color: #00000080;
     border-radius: 20px;
     margin: 40px;
@@ -110,7 +112,7 @@
 .div-dados-worker h1{
     text-align: center;
     color: #000;
-    background-color: #c4c400;
+    background-color: #FECB01;
     margin: 10px;
     border-radius: 10px;
 }
@@ -130,6 +132,16 @@
 }
 
 .link-button-adiciona-perfil-prof{
+    text-decoration: none;
+    color: #000;
+}
+
+.link-button-adiciona-perfil-prof:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+.link-button-altera-perfil:hover{
     text-decoration: none;
     color: #000;
 }

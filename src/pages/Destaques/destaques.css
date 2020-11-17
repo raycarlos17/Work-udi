@@ -1,6 +1,6 @@
 .div-principal-destaques {
     text-align: center;
-    background: #0000004d;
+    background: #808080;
     margin: 10px;
     border-radius: 20px;
     border: solid 2px;
@@ -44,7 +44,7 @@
     background-color: #0000004d;
     border-radius: 10px;
     border: solid 1px;
-    border-color: #ffff00;
+    border-color: #FECB01;
     width: 85%;
     margin-left: 10px;
 }
@@ -67,13 +67,14 @@
     margin-bottom: 10px;
     width: 50%;
     height: 25px;
-    background-color:  #c4c400;
+    background-color:  #FECB01;
     transition: all ease 0.2s;
-    color: #c4c400;
+    color: #FECB01;
 }
 
 .div-contate button:hover {
-    background-color: #ffff00;
+    background-color: #cca300;
+    color: #000;
 }
 
 .wrapper {
@@ -113,6 +114,11 @@
 }
 
 .link-workers {
+    text-decoration: none;
+    color: #000;
+}
+
+.link-workers:hover {
     text-decoration: none;
     color: #000;
 }

@@ -12,15 +12,17 @@
     "history": "^5.0.0",
     "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",
+    "material-ui": "^0.20.2",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
+    "react-big-calendar": "^0.28.6",
     "react-dom": "^16.13.1",
     "react-image-gallery": "^1.0.8",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-slick": "^0.27.11",
-    "slick-carousel": "^1.8.1",
-    "material-ui": "^0.20.2"
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

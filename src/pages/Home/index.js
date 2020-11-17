@@ -26,7 +26,7 @@ const Home = (props) => {
                 <div className='logo-home'><h1>WU</h1></div>
                 <div className='info-site'>
                     <p>THE BEST PROFESSIONALS FOR WHATEEVER YOU NEED, YOU CAN FIND HERE...</p>
-                    <div >
+                    <div className="home-div-button-register" >
                         <button className='button-register'><Link className='link-register-home' to='/register'>REGISTER NOW</Link></button>
                     </div>
                 </div>

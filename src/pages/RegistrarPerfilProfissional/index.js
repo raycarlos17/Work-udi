@@ -19,7 +19,6 @@ const RegistrarPerfilProfissional = (props) => {
     const [description, setDescription] = useState('')
 
     const id = props.match.params.id
-    console.log(id)
 
     async function registerWorkerBack() {
         try {
@@ -31,7 +30,7 @@ const RegistrarPerfilProfissional = (props) => {
                     'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({
-                    "id": id,
+                    "_id": id,
                     "name": name,
                     "email": email,
                     "occupation": occupation,
