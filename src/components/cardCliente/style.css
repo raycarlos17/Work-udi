@@ -30,3 +30,11 @@
 .btnCustom:hover{
     color: white;
 }
+
+.btnCustomLink{
+    color: #C2C2C2;
+}
+
+.btnCustomLink:hover{
+    color: white;
+}

@@ -3,7 +3,7 @@ import './style.css'
 
 import Logo1 from '../../assets/img/Vector.svg'
 import Logo2 from '../../assets/img/Vector-1.svg'
-import IconSearch from '../../assets/img/mdi_search.svg'
+// import IconSearch from '../../assets/img/mdi_search.svg'
 
 class Navbar extends React.Component {
     render() {

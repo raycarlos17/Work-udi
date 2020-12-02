@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './registrarPerfilProfissional.css';
 import Header from '../../components/Header';
 import ButtonLogOut from '../../components/ButtonLogOut';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Footer from '../../components/footerBreno';
 import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
@@ -30,7 +30,7 @@ const RegistrarPerfilProfissional = (props) => {
                     'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({
-                    "_id": id,
+                    "id": id,
                     "name": name,
                     "email": email,
                     "occupation": occupation,
@@ -39,7 +39,6 @@ const RegistrarPerfilProfissional = (props) => {
                 })
             })
             let json = await retorno.json()
-            console.log(json)
             if(json.respostaCadastro === 'sucesso'){
                 alert(json.Message)
                 return;

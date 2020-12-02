@@ -8,6 +8,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import PeopleIcon from '@material-ui/icons/People';
+import { TramOutlined } from '@material-ui/icons';
 
 const HomeCliente = (props) => {
 
@@ -60,9 +61,9 @@ const HomeCliente = (props) => {
                 <p><PeopleIcon className='icon-perfil-cliente' /><strong>Profile: </strong>{User.perfil}</p>
             </div>
             <div className='buttons-profissional'>
-                <div className='button-alterar-dados-client'>
-                    <button><Link to={`/alterar/perfil/${User.id}`} className='link-button-altera-perfil'>CHANGE PROFILE</Link></button>
-                </div>
+                {/* <div className='button-alterar-dados-client'>
+                    <button ><Link to={`/alterar/perfil/${User.id}`} className='link-button-altera-perfil' >CHANGE PROFILE</Link></button>
+                </div> */}
                 <div className='button-list-workers'>
                     <button><Link to={`/home/cliente`} className='link-button-list-workers'>LIST WORKERS</Link></button>
                 </div>

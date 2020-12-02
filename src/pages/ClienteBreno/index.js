@@ -25,7 +25,6 @@ function Home() {
             });
 
             let json = await retorno.json()
-            console.log(json.workers)
             setListWorkers(json.workers)
             return json
         }
@@ -41,6 +40,7 @@ function Home() {
                 <CardC nome={workers.name}
                     desc={workers.description}
                     proff={workers.occupation}
+                    id={workers.id}
                     img="https://i.pinimg.com/736x/a7/28/01/a72801bd0c717c39efa040aaa8ce42fe.jpg"
                 /> 
             )

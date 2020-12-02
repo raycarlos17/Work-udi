@@ -10,8 +10,9 @@ import RegistrarPerfilProfissional from './pages/RegistrarPerfilProfissional';
 import AlterarDadosPerfil from './pages/AlteraDadosPerfil'
 import HomeProfissionalRaphael from './pages/HomeProfissionalRaphael';
 import HomeClienteBreno from './pages/ClienteBreno';
-import {isAuthenticated} from './authenticated.js';
+// import {isAuthenticated} from './authenticated.js';
 import {isAuthenticated2} from './authenticated2.js';
+import WorkerAgenda from './pages/WorkerAgenda';
 
 const PrivateRoute = ({ component: Component, ...rest}) => (
     <Route {...rest} render={props => (
@@ -36,6 +37,7 @@ function Routes(props) {
             <PrivateRoute exact path='/alterar/perfil/:id' component={AlterarDadosPerfil} />
             <PrivateRoute exact path='/home/profissional' component={HomeProfissionalRaphael}/>
             <PrivateRoute exact path='/home/cliente' component={HomeClienteBreno}/>
+            <PrivateRoute exact path='/workers/agenda/:id' component={WorkerAgenda}/>
             <Redirect from='*' to='/' />
         </Switch>
     )

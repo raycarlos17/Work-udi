@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css'
 
 
@@ -22,7 +23,7 @@ class CardInfo extends React.Component {
                          {this.props.proff}
                         </p>
                         <div className="mb-2" style={{display: 'flex', justifyContent: 'center'}}>
-                            <button className="btnCustom">Contratar</button>
+                            <button className="btnCustom"><Link className="btnCustomLink"  to={`/workers/agenda/${this.props.id}`}>Contratar</Link></button>
                         </div>
                     </div>
                 </div>

@@ -17,18 +17,18 @@ class CardTrabalhos extends React.Component {
                             <span className="text-center mb-2 "> Imagens</span>
                             <div class="row mb-4">
                                 <div class="col-6 mt-2">
-                                    <img src={zeref} style={{ width:'50px'}} />
+                                    <img alt="img" src={zeref} style={{ width:'50px'}} />
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <img src={zeref} style={{ width:'50px'}} />
+                                    <img alt="img" src={zeref} style={{ width:'50px'}} />
                                 </div>
 
                                 <div class="col-6 mt-2">
-                                    <img src={zeref} style={{ width:'50px'}}
+                                    <img alt="img" src={zeref} style={{ width:'50px'}}
                                     />
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <img src={zeref} style={{ width:'50px'}} />
+                                    <img alt="img" src={zeref} style={{ width:'50px'}} />
                                 </div>
                             </div>
                         </div>
