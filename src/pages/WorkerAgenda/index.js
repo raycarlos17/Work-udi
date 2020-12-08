@@ -96,10 +96,12 @@ function WorkerAgenda(props) {
       
       if(json.respostaAgendamento === 'sucesso'){
         alert(json.Message)
+ 
         return;
       }
       else if(json.respostaAgendamento === 'dataOcupada'){
         alert(json.Message)
+  
         return;
       }
 

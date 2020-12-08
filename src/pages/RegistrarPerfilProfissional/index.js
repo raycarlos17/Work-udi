@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './registrarPerfilProfissional.css';
-import Header from '../../components/Header';
-import ButtonLogOut from '../../components/ButtonLogOut';
-// import { Link } from 'react-router-dom';
+import Header from '../../components/navbarBreno'
+import { Link } from 'react-router-dom';
 import Footer from '../../components/footerBreno';
 import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
@@ -17,6 +16,12 @@ const RegistrarPerfilProfissional = (props) => {
     const [occupation, setOccupation] = useState('')
     const [contact, setContact] = useState('')
     const [description, setDescription] = useState('')
+    const [user, setUser] = useState([])
+
+    useEffect(() => {
+        dadosUser();
+        dadosUserWorker();
+    }, [])
 
     const id = props.match.params.id
 
@@ -69,6 +74,53 @@ const RegistrarPerfilProfissional = (props) => {
         }
     }
 
+    async function dadosUser() {
+
+        try {
+            let retorno = await fetch(`http://localhost:5000/users/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            });
+
+            let json = await retorno.json()
+            console.log(json)
+            setUser(json)
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function dadosUserWorker() {
+        const id = props.match.params.id;
+    
+        try {
+          let retorno = await fetch(`http://localhost:5000/workers/${id}`, {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+          });
+    
+          let json = await retorno.json();
+          console.log(json);
+         setName(json.name);
+         setEmail(json.email);
+         setOccupation(json.occupation);
+         setContact(json.contact);
+         setDescription(json.description);
+
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
     function confirmRegisterWorker() {
         if (name === '' && email === '' & occupation === '') {
             alert('É necessário preencher os campos obrigatorios que contem (Required)')
@@ -81,7 +133,6 @@ const RegistrarPerfilProfissional = (props) => {
             }
         }
     }
-
 
     function clearForms() {
         setName('')
@@ -128,11 +179,7 @@ const RegistrarPerfilProfissional = (props) => {
 
     return (
         <div>
-            <Header>
-                <div className='div-ButtonLogOut'>
-                    <ButtonLogOut />
-                </div>
-            </Header>
+            <Header/>
             <div className='div-register-perfil-prof-principal'>
                 <h1>PROFESSIONAL DATA</h1>
                 <hr />
@@ -162,7 +209,7 @@ const RegistrarPerfilProfissional = (props) => {
                         {/* <button onClick={handleClickUpdateWorker}>CHANGE</button>
                         <button onClick={handleClickDelete}>DELETE</button>
                         <button onClick={(undefined)}>UPDATE PAGE</button> */}
-                        {/* <button><Link className='link-button-perfil' to={`/${listUser.perfil}/${listUser.id}`}>BACK PROFILE</Link></button> */}
+                        <button className='registrar-perfil-profissional-button-come-back'><Link className='link-button-perfil' to={`/${user.perfil}/${user._id}`}>BACK</Link></button>
                     </div>
                 </form>
             </div>

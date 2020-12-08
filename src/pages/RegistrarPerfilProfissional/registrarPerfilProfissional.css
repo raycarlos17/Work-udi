@@ -61,6 +61,7 @@
 
 .div-button-registrar-profissional button:hover {
     background: #ffff00;
+    color: #000;
 }
 
 .link-button-perfil {
@@ -78,4 +79,14 @@
     border: none;
     border-radius: 5px;
     font-size: 18px;
+}
+
+.registrar-perfil-profissional-button-come-back :hover{
+    background: #ffff00;
+    color: #000;
+}
+
+.link-button-perfil{
+    text-decoration: none;
+    color: #000;
 }

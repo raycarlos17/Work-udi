@@ -63,6 +63,7 @@ const Workers = (props) => {
                 <hr/>
                 <p><DescriptionIcon className='icon-workers'/><strong>Description: </strong>{worker.description}</p>
             </div>
+            <span className='workers-span-mensagem'><text>FAÇA SEU <Link to={'/register'}>REGISTRO</Link> NO SITE OU O <Link to={'/login'}>LOGIN</Link> PARA AGENDAR UM SERVIÇO</text></span>
             <Footer/>
         </div>
     )

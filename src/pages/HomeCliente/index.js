@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './homeCliente.css';
 import Footer from '../../components/footerBreno';
 import ButtonLogOut from '../../components/ButtonLogOut';
-import Header from '../../components/Header';
+import Header from '../../components/navbarBreno'
 import { Link } from 'react-router-dom';
 import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
@@ -43,11 +43,7 @@ const HomeCliente = (props) => {
 
     return (
         <div>
-            <Header>
-                <div className='div-ButtonLogOut'>
-                    <ButtonLogOut />
-                </div>
-            </Header>
+            <Header/>
             <div className='div-inf-client-principal'>
                 <h1>Welcome to {User.name}</h1>
                 <h2>Profile data</h2>

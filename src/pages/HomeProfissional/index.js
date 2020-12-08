@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ButtonLogOut from "../../components/ButtonLogOut";
 import Footer from "../../components/footerBreno";
-import Header from "../../components/Header";
+import Header from '../../components/navbarBreno'
 import { Link } from "react-router-dom";
 import "./homeProfissional.css";
 import PersonIcon from "@material-ui/icons/Person";
@@ -36,9 +36,7 @@ const HomeProfissional = (props) => {
       });
 
       let json = await retorno.json();
-      console.log(json);
       setUser(json);
-      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -107,11 +105,7 @@ const HomeProfissional = (props) => {
 
   return (
     <div>
-      <Header>
-        <div className="div-ButtonLogOut">
-          <ButtonLogOut />
-        </div>
-      </Header>
+      <Header/>
       <div className="div-inf-profissional-principal">
         <h1>Welcome to {user.name}</h1>
         <h2>Profile data</h2>
